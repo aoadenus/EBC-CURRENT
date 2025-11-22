@@ -68,6 +68,7 @@
         .chart-container {
             height: 160px;
             position: relative;
+            border: 2px dashed #C44569; /* Debug border */
         }
 
         /* Quick Action Buttons Bar - Compact & Offset */
@@ -515,6 +516,7 @@
 
             // Revenue Trend Chart
             const revenueCtx = document.getElementById('revenueChart');
+            console.log('Creating Revenue Chart:', revenueCtx);
             if (revenueCtx) {
                 new Chart(revenueCtx, {
                     type: 'line',
@@ -562,6 +564,7 @@
 
             // Popular Products Chart
             const productsCtx = document.getElementById('productsChart');
+            console.log('Creating Products Chart:', productsCtx);
             if (productsCtx) {
                 new Chart(productsCtx, {
                     type: 'bar',
@@ -606,6 +609,7 @@
 
             // Order Status Distribution Chart
             const statusCtx = document.getElementById('statusChart');
+            console.log('Creating Status Chart:', statusCtx);
             if (statusCtx) {
                 const statusCounts = getStatusCounts();
                 new Chart(statusCtx, {

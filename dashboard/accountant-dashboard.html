@@ -137,6 +137,7 @@
         .chart-container {
             height: 160px;
             position: relative;
+            border: 2px dashed #C44569; /* Debug border */
         }
 
         /* Tables Section - Smaller */
@@ -500,11 +501,158 @@
 
             // Initialize charts
             setTimeout(() => {
-                if (typeof Chart !== 'undefined') {
-                    console.log('Chart.js loaded, initializing charts...');
-                    initializeCharts();
-                } else {
+                const debugDiv = document.createElement('div');
+                debugDiv.style.position = 'fixed';
+                debugDiv.style.top = '0';
+                debugDiv.style.right = '0';
+                debugDiv.style.background = '#fff';
+                debugDiv.style.color = '#C44569';
+                debugDiv.style.fontWeight = 'bold';
+                debugDiv.style.zIndex = '9999';
+                debugDiv.style.padding = '8px 16px';
+                debugDiv.style.border = '2px solid #C44569';
+                debugDiv.style.display = 'none';
+                debugDiv.id = 'chartjs-debug';
+                document.body.appendChild(debugDiv);
+                if (typeof Chart === 'undefined') {
+                    debugDiv.textContent = '❌ Chart.js NOT loaded! Check CDN/network.';
+                    debugDiv.style.display = 'block';
                     console.error('Chart.js not loaded!');
+                    return;
+                }
+                debugDiv.textContent = '✅ Chart.js loaded: ' + Chart.version;
+                debugDiv.style.display = 'block';
+
+                // Revenue Chart
+                const revenueCtx = document.getElementById('revenueChart');
+                console.log('Creating Revenue Chart:', revenueCtx);
+                if (revenueCtx) {
+                    new Chart(revenueCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                            datasets: [{
+                                label: 'Revenue',
+                                data: [2850, 3120, 3340, 2950],
+                                borderColor: '#10B981',
+                                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                fill: true,
+                                tension: 0.4,
+                                pointRadius: 4,
+                                pointHoverRadius: 6,
+                                pointBackgroundColor: '#10B981',
+                                pointBorderColor: '#fff',
+                                pointBorderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: v => '$' + v,
+                                        font: { size: 11 }
+                                    },
+                                    grid: { color: '#F3F4F6' }
+                                },
+                                x: {
+                                    ticks: { font: { size: 11 } },
+                                    grid: { display: false }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Expense Chart
+                const expenseCtx = document.getElementById('expenseChart');
+                console.log('Creating Expense Chart:', expenseCtx);
+                if (expenseCtx) {
+                    new Chart(expenseCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Ingredients', 'Rent', 'Utilities', 'Marketing', 'Supplies', 'Other'],
+                            datasets: [{
+                                data: [
+                                    dashboardData.expenses.ingredients,
+                                    dashboardData.expenses.rent,
+                                    dashboardData.expenses.utilities,
+                                    dashboardData.expenses.marketing,
+                                    dashboardData.expenses.supplies,
+                                    dashboardData.expenses.other
+                                ],
+                                backgroundColor: [
+                                    '#F59E0B',
+                                    '#C44569',
+                                    '#3B82F6',
+                                    '#10B981',
+                                    '#A855F7',
+                                    '#6B7280'
+                                ],
+                                borderColor: '#fff',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        font: { size: 10 },
+                                        usePointStyle: true,
+                                        padding: 8
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Profit Chart
+                const profitCtx = document.getElementById('profitChart');
+                console.log('Creating Profit Chart:', profitCtx);
+                if (profitCtx) {
+                    new Chart(profitCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                            datasets: [{
+                                label: 'Profit',
+                                data: [850, 1120, 1340, 950],
+                                backgroundColor: '#10B981',
+                                borderRadius: 6,
+                                borderSkipped: false
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: v => '$' + v,
+                                        font: { size: 11 }
+                                    },
+                                    grid: { color: '#F3F4F6' }
+                                },
+                                x: {
+                                    ticks: { font: { size: 11 } },
+                                    grid: { display: false }
+                                }
+                            }
+                        }
+                    });
                 }
             }, 200);
         }
@@ -543,137 +691,6 @@
                     <td><span class="status-badge status-${invoice.status}">${invoice.status}</span></td>
                 </tr>
             `).join('');
-        }
-
-        function initializeCharts() {
-            // Revenue Trend Chart (30 Days)
-            const revenueCtx = document.getElementById('revenueChart');
-            if (revenueCtx) {
-                new Chart(revenueCtx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                        datasets: [{
-                            label: 'Revenue',
-                            data: [2850, 3120, 3340, 2950],
-                            borderColor: '#10B981',
-                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                            fill: true,
-                            tension: 0.4,
-                            pointRadius: 4,
-                            pointHoverRadius: 6,
-                            pointBackgroundColor: '#10B981',
-                            pointBorderColor: '#fff',
-                            pointBorderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: v => '$' + v,
-                                    font: { size: 11 }
-                                },
-                                grid: { color: '#F3F4F6' }
-                            },
-                            x: {
-                                ticks: { font: { size: 11 } },
-                                grid: { display: false }
-                            }
-                        }
-                    }
-                });
-            }
-
-            // Expense Distribution Chart
-            const expenseCtx = document.getElementById('expenseChart');
-            if (expenseCtx) {
-                new Chart(expenseCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Ingredients', 'Rent', 'Utilities', 'Marketing', 'Supplies', 'Other'],
-                        datasets: [{
-                            data: [
-                                dashboardData.expenses.ingredients,
-                                dashboardData.expenses.rent,
-                                dashboardData.expenses.utilities,
-                                dashboardData.expenses.marketing,
-                                dashboardData.expenses.supplies,
-                                dashboardData.expenses.other
-                            ],
-                            backgroundColor: [
-                                '#F59E0B',
-                                '#C44569',
-                                '#3B82F6',
-                                '#10B981',
-                                '#A855F7',
-                                '#6B7280'
-                            ],
-                            borderColor: '#fff',
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    font: { size: 10 },
-                                    usePointStyle: true,
-                                    padding: 8
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-
-            // Weekly Profit Comparison Chart
-            const profitCtx = document.getElementById('profitChart');
-            if (profitCtx) {
-                new Chart(profitCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                        datasets: [{
-                            label: 'Profit',
-                            data: [850, 1120, 1340, 950],
-                            backgroundColor: '#10B981',
-                            borderRadius: 6,
-                            borderSkipped: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: v => '$' + v,
-                                    font: { size: 11 }
-                                },
-                                grid: { color: '#F3F4F6' }
-                            },
-                            x: {
-                                ticks: { font: { size: 11 } },
-                                grid: { display: false }
-                            }
-                        }
-                    }
-                });
-            }
         }
 
         function backToSite() {
