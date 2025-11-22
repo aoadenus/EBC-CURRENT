@@ -154,6 +154,17 @@ body {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Logo image sizing (main nav and staff sidebar) */
+.logo img,
+.nav-logo img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
 /* ============================================================================
    HERO SECTION (Homepage)
    ============================================================================ */
