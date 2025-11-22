@@ -1208,13 +1208,19 @@ body {
     line-height: 1.5;
 }
 
-.nav-menu {
+.staff-nav .nav-menu {
     list-style: none;
     padding: 20px 10px;
+<<<<<<< HEAD
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 4px;
+=======
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+>>>>>>> 95aece5 (The side bar fixed)
 }
 
 .nav-menu li {
