@@ -134,6 +134,10 @@
             max-height: 200px;
         }
 
+        .demo-credentials p {
+            margin: 8px 0;
+        }
+
         .back-link {
             text-align: center;
             margin-top: 20px;
@@ -149,170 +153,13 @@
             text-decoration: underline;
         }
 
-        /* Dashboard Styles */
-        .dashboard {
-            display: none;
-        }
-
-        .dashboard.active {
-            display: block;
-        }
-
-        .dashboard-nav {
-            background: #2B2B2B;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 60px;
-            left: 0;
-            right: 0;
-            z-index: 900;
-        }
-
-        .dashboard-nav h2 {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        .logout-btn {
-            background: #C44569;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
-
-        .logout-btn:hover {
-            background: #D45579;
-        }
-
-        .dashboard-main {
-            margin-top: 120px;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .dashboard-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 30px;
-            color: #2B2B2B;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-left: 4px solid #C44569;
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            color: #C44569;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            color: #5A3825;
-            font-size: 14px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .data-table {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-            margin-bottom: 40px;
-        }
-
-        .data-table h3 {
-            padding: 20px;
-            margin: 0;
-            border-bottom: 2px solid #F8EBD7;
-            color: #2B2B2B;
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-        }
-
-        .data-table table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-
-        .data-table th {
-            background: #F8EBD7;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-            color: #2B2B2B;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .data-table td {
-            padding: 12px;
-            border-bottom: 1px solid #F8EBD7;
-        }
-
-        .data-table tr:hover {
-            background: #FFFBF5;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .status-confirmed {
-            background: #D4EDDA;
-            color: #155724;
-        }
-
-        .status-pending {
-            background: #FFF3CD;
-            color: #856404;
-        }
-
-        .status-inquiry {
-            background: #D1ECF1;
-            color: #0C5460;
-        }
-
         @media (max-width: 768px) {
-            .dashboard-nav {
-                flex-direction: column;
-                gap: 10px;
+            .login-box {
+                padding: 30px 20px;
             }
 
-            .data-table {
-                font-size: 12px;
-            }
-
-            .data-table th,
-            .data-table td {
-                padding: 8px;
+            .login-box h1 {
+                font-size: 28px;
             }
         }
     </style>
@@ -348,7 +195,7 @@
     <div class="login-container" id="loginContainer">
         <div class="login-box">
             <h1>Staff Login</h1>
-            <p>Access the staff dashboard</p>
+            <p>Access the staff portal</p>
             <form onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label for="username">Username:</label>
@@ -376,74 +223,7 @@
             </div>
 
             <div class="back-link">
-                <a href="index.html">&larr; Back to Home</a> |
-                <a href="forgot-password.html">Forgot Password?</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dashboard -->
-    <div class="dashboard" id="dashboard">
-        <div class="dashboard-nav">
-            <h2>Staff Dashboard</h2>
-            <button class="logout-btn" onclick="handleLogout()">Logout</button>
-        </div>
-
-        <div class="dashboard-main">
-            <div class="dashboard-title">Welcome to the Staff Dashboard</div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalOrders">5</div>
-                    <div class="stat-label">Total Orders</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="confirmedOrders">2</div>
-                    <div class="stat-label">Confirmed Orders</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="totalRevenue">$1,850</div>
-                    <div class="stat-label">Total Revenue</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="totalCustomers">8</div>
-                    <div class="stat-label">Total Customers</div>
-                </div>
-            </div>
-
-            <!-- Recent Orders -->
-            <div class="data-table">
-                <h3>Recent Orders</h3>
-                <table id="ordersTable">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Event Date</th>
-                            <th>Cake Type</th>
-                            <th>Total Price</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-
-            <!-- Customers List -->
-            <div class="data-table">
-                <h3>Customers</h3>
-                <table id="customersTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Orders</th>
-                            <th>Total Spent</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <a href="index.html">&larr; Back to Home</a>
             </div>
         </div>
     </div>
@@ -483,78 +263,36 @@
                 localStorage.setItem('staffUser', username);
                 localStorage.setItem('staffRole', role);
 
-                // Redirect to dashboard with role parameter
-                window.location.href = `dashboard.html?role=${role}`;
+                // Redirect to products page with role parameter
+                window.location.href = `staff-products.html?role=${role}`;
             } else {
-                alert('Invalid credentials. Please check your email and password.');
+                alert('Invalid credentials. Please check your username and password.');
             }
         }
 
-        function handleLogout() {
-            localStorage.removeItem('staffUser');
-            showLogin();
-        }
-
-        function showDashboard() {
-            document.getElementById('loginContainer').style.display = 'none';
-            document.getElementById('dashboard').classList.add('active');
-            populateDashboard();
-        }
-
-        function showLogin() {
-            document.getElementById('loginContainer').style.display = 'flex';
-            document.getElementById('dashboard').classList.remove('active');
-        }
-
-        function populateDashboard() {
-            if (typeof mockData === 'undefined') {
-                console.error('Mock data not loaded');
-                return;
-            }
-
-            // Populate stats
-            const confirmedCount = mockData.orders.filter(o => o.status === 'confirmed').length;
-            const totalRevenue = mockData.orders.reduce((sum, o) => sum + o.totalPrice, 0);
-
-            document.getElementById('totalOrders').textContent = mockData.orders.length;
-            document.getElementById('confirmedOrders').textContent = confirmedCount;
-            document.getElementById('totalRevenue').textContent = '$' + totalRevenue;
-            document.getElementById('totalCustomers').textContent = mockData.customers.length;
-
-            // Populate orders table
-            const ordersBody = document.querySelector('#ordersTable tbody');
-            ordersBody.innerHTML = mockData.orders.map(order => `
-                <tr>
-                    <td>#${order.id}</td>
-                    <td>${order.customerName}</td>
-                    <td>${order.eventDate}</td>
-                    <td>${order.cakeType}</td>
-                    <td>$${order.totalPrice}</td>
-                    <td><span class="status-badge status-${order.status}">${order.status.replace('_', ' ')}</span></td>
-                </tr>
-            `).join('');
-
-            // Populate customers table
-            const customersBody = document.querySelector('#customersTable tbody');
-            customersBody.innerHTML = mockData.customers.map(customer => `
-                <tr>
-                    <td>${customer.name}</td>
-                    <td>${customer.phone}</td>
-                    <td>${customer.email}</td>
-                    <td>${customer.totalOrders}</td>
-                    <td>$${customer.spent}</td>
-                </tr>
-            `).join('');
-        }
-
-        // Check if user is already logged in
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
-            const user = localStorage.getItem('staffUser');
-            if (user) {
-                showDashboard();
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
             }
+
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link, .staff-login-btn');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('active');
+                    }
+                    navMenu.classList.remove('active');
+                });
+            });
         });
     </script>
-    <script src="js/script.js"></script>
 </body>
 </html>

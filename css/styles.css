@@ -70,13 +70,14 @@ body {
     opacity: 0.9;
 }
 
-.nav-menu {
-    display: flex;
+.navbar .nav-menu {
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
     gap: 20px;
 }
 
-.nav-link {
+.navbar .nav-link {
     color: white;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
@@ -88,12 +89,12 @@ body {
     position: relative;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
     opacity: 1;
 }
 
-.nav-link.active::after {
+.navbar .nav-link.active::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -103,7 +104,7 @@ body {
     background: white;
 }
 
-.staff-login-btn {
+.navbar .staff-login-btn {
     background: white;
     color: #C44569;
     padding: 8px 20px;
@@ -116,7 +117,7 @@ body {
     margin-left: 10px;
 }
 
-.staff-login-btn:hover {
+.navbar .staff-login-btn:hover {
     background: #F8EBD7;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -1065,31 +1066,31 @@ body {
    RESPONSIVE DESIGN
    ============================================================================ */
 @media (max-width: 1024px) {
-    .nav-menu {
+    .navbar .nav-menu {
         position: fixed;
         top: 60px;
         left: -100%;
         width: 300px;
         height: calc(100vh - 60px);
         background: #C44569;
-        flex-direction: column;
+        flex-direction: column !important;
         padding: 40px 20px;
         transition: left 0.3s ease;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         align-items: flex-start;
     }
 
-    .nav-menu.active {
+    .navbar .nav-menu.active {
         left: 0;
     }
 
-    .nav-link {
+    .navbar .nav-link {
         width: 100%;
         padding: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .staff-login-btn {
+    .navbar .staff-login-btn {
         margin-left: 0;
         margin-top: 20px;
         display: block;
