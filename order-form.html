@@ -23,6 +23,7 @@
         }
 
         .container {
+            position: relative;
             max-width: 900px;
             margin: 0 auto;
             background: white;
@@ -171,6 +172,27 @@
             background: #A33854;
         }
 
+        .back-btn {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            background: white;
+            color: #C44569;
+            border: 2px solid #E9E9E9;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: background 0.15s, transform 0.08s;
+        }
+
+        .back-btn:hover {
+            background: #FFF7F9;
+            transform: translateY(-1px);
+        }
+
         .alert {
             padding: 15px 20px;
             border-radius: 6px;
@@ -233,6 +255,7 @@
 </head>
 <body>
     <div class="container">
+        <a href="dashboard/index.html" class="back-btn" aria-label="Back to Dashboard">← Dashboard</a>
         <div class="header">
             <h1>🎂 Cake Order Form</h1>
             <p>Customize your perfect celebration cake</p>
