@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Dashboard - Emily Bakes Cakes</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Chart.js for charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -19,7 +16,7 @@
             <p class="nav-subtitle">Staff Portal</p>
         </div>
         <ul class="nav-menu">
-            <li><a href="dashboard.html" class="nav-link active">
+            <li><a href="staff-dashboard.html" class="nav-link active">
                 <span class="nav-icon">📊</span>
                 <span>Dashboard</span>
             </a></li>
@@ -47,11 +44,11 @@
         <!-- Header Bar -->
         <header class="staff-header">
             <div class="header-left">
-                <h1 class="welcome-text" id="staffName">Welcome, Staff Member</h1>
-                <p class="role-text" id="staffRole">Staff</p>
+                <h1 class="welcome-text">Welcome, Sarah Johnson</h1>
+                <p class="role-text">Sales Staff</p>
             </div>
             <div class="header-right">
-                <span class="pickup-badge" id="pickupBadge">5 Pickups Today</span>
+                <span class="pickup-badge">5 Pickups Today</span>
                 <a href="index.html" class="back-link">Back to Site</a>
                 <button class="logout-btn" onclick="logout()">Logout</button>
             </div>
@@ -81,8 +78,8 @@
 
             <!-- Action Buttons Row -->
             <div class="action-row">
-                <button class="action-btn primary-btn" onclick="alert('Create New Order - Coming Soon!')">Create New Order</button>
-                <button class="action-btn secondary-btn" onclick="alert('Add Customer - Coming Soon!')">Add Customer</button>
+                <button class="action-btn primary-btn">Create New Order</button>
+                <button class="action-btn secondary-btn">Add Customer</button>
             </div>
 
             <!-- Charts Row -->
@@ -121,7 +118,7 @@
                             <td>10:00 AM</td>
                             <td><span class="status-badge status-ready">Ready</span></td>
                             <td>$85.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5001 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                         <tr>
                             <td>#5002</td>
@@ -129,7 +126,7 @@
                             <td>11:30 AM</td>
                             <td><span class="status-badge status-decorating">Decorating</span></td>
                             <td>$120.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5002 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                         <tr>
                             <td>#5003</td>
@@ -137,7 +134,7 @@
                             <td>1:00 PM</td>
                             <td><span class="status-badge status-baking">In Baking</span></td>
                             <td>$95.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5003 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                         <tr>
                             <td>#5004</td>
@@ -145,7 +142,7 @@
                             <td>2:30 PM</td>
                             <td><span class="status-badge status-ready">Ready</span></td>
                             <td>$150.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5004 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                         <tr>
                             <td>#5005</td>
@@ -153,7 +150,7 @@
                             <td>4:00 PM</td>
                             <td><span class="status-badge status-pending">To Be Created</span></td>
                             <td>$75.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5005 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                         <tr>
                             <td>#5006</td>
@@ -161,7 +158,7 @@
                             <td>5:00 PM</td>
                             <td><span class="status-badge status-ready">Ready</span></td>
                             <td>$110.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5006 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                         <tr>
                             <td>#5007</td>
@@ -169,7 +166,7 @@
                             <td>5:30 PM</td>
                             <td><span class="status-badge status-decorating">Decorating</span></td>
                             <td>$135.00</td>
-                            <td><button class="view-btn" onclick="alert('View Order #5007 - Coming Soon!')">View</button></td>
+                            <td><button class="view-btn">View</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -200,74 +197,5 @@
     </div>
 
     <script src="js/dashboard.js"></script>
-    <script>
-        // Role-based configuration
-        const roleConfig = {
-            manager: {
-                name: 'Manager',
-                displayName: 'Sarah Johnson',
-                pickups: 8
-            },
-            sales: {
-                name: 'Sales Staff',
-                displayName: 'Sarah Johnson',
-                pickups: 5
-            },
-            baker: {
-                name: 'Baker',
-                displayName: 'Mike Baker',
-                pickups: 0
-            },
-            decorator: {
-                name: 'Decorator',
-                displayName: 'Lisa Artiste',
-                pickups: 0
-            },
-            accountant: {
-                name: 'Accountant',
-                displayName: 'John Numbers',
-                pickups: 0
-            }
-        };
-
-        // Get role from URL parameter
-        function getRoleFromURL() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get('role') || localStorage.getItem('staffRole') || 'staff';
-        }
-
-        // Initialize dashboard based on role
-        function initDashboard() {
-            const role = getRoleFromURL();
-            const config = roleConfig[role] || { name: 'Staff', displayName: 'Staff Member', pickups: 5 };
-
-            // Update header with role-specific info
-            document.getElementById('staffName').textContent = `Welcome, ${config.displayName}`;
-            document.getElementById('staffRole').textContent = config.name;
-
-            // Update pickup badge
-            if (config.pickups > 0) {
-                document.getElementById('pickupBadge').textContent = `${config.pickups} Pickups Today`;
-            } else {
-                document.getElementById('pickupBadge').textContent = 'No Pickups';
-            }
-
-            // Store role in localStorage for navigation
-            localStorage.setItem('staffRole', role);
-        }
-
-        // Check authentication on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const user = localStorage.getItem('staffUser');
-            if (!user) {
-                // Not logged in, redirect to login page
-                window.location.href = 'staff-login.html';
-                return;
-            }
-
-            // Initialize dashboard with role-specific data
-            initDashboard();
-        });
-    </script>
 </body>
 </html>
