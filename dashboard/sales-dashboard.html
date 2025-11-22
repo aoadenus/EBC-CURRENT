@@ -70,81 +70,53 @@
             position: relative;
         }
 
-        /* Quick actions moved to left sidebar */
-        .quick-actions-sidebar {
-            position: fixed;
-            left: 200px;
-            top: 76px;
-            width: 150px;
-            display: flex;
-            flex-direction: column;
+        /* Quick Action Buttons Bar - Compact & Offset */
+        .quick-actions-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 8px;
-            z-index: 10;
+            margin-bottom: 10px;
+            margin-top: 14px;
         }
 
-        .quick-action-btn {
-            padding: 10px 12px;
-            background: var(--bg-white);
-            border: 2px solid var(--border-light);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.2s;
-            font-size: 12px;
+        .action-btn {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 4px;
-        }
-
-        .quick-action-btn:hover {
-            border-color: var(--primary);
-            background: rgba(196, 69, 105, 0.05);
-            transform: translateX(4px);
-        }
-
-        .quick-action-btn.primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border-color: transparent;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .quick-action-btn.primary:hover {
-            box-shadow: 0 6px 16px rgba(196, 69, 105, 0.4);
-        }
-
-        .quick-action-btn.secondary {
-            background: linear-gradient(135deg, var(--success), #059669);
-            color: white;
-            border-color: transparent;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .quick-action-btn.secondary:hover {
-            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
-        }
-
-        .quick-action-icon {
-            font-size: 20px;
-        }
-
-        .quick-action-text {
+            justify-content: center;
+            gap: 5px;
+            padding: 6px 10px;
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
             font-size: 11px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
         }
 
-        /* Adjust main content to accommodate sidebar */
-        .main-content {
-            margin-left: 350px !important;
-            padding-left: 0px !important;
-            padding-right: 20px !important;
+        .action-btn:hover {
+            border-color: #C44569;
+            background: #FDF2F8;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(196, 69, 105, 0.2);
         }
 
-        .main-content .content {
-            margin-left: 0 !important;
-            padding-left: 0 !important;
+        .action-btn.primary {
+            background: linear-gradient(135deg, #C44569, #9A3350);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 2px 6px rgba(196, 69, 105, 0.25);
+        }
+
+        .action-btn.primary:hover {
+            background: linear-gradient(135deg, #A33555, #7A2741);
+            box-shadow: 0 3px 10px rgba(196, 69, 105, 0.4);
+        }
+
+        .action-icon {
+            font-size: 14px;
         }
 
         .schedule-section {
@@ -290,26 +262,6 @@
         </ul>
     </nav>
 
-    <!-- QUICK ACTIONS SIDEBAR (LEFT) -->
-    <div class="quick-actions-sidebar">
-        <a href="../order-form.html" class="quick-action-btn primary">
-            <span class="quick-action-icon">📝</span>
-            <span class="quick-action-text">Create New Order</span>
-        </a>
-        <a href="new-customer.html" class="quick-action-btn secondary">
-            <span class="quick-action-icon">👤</span>
-            <span class="quick-action-text">Add Customer</span>
-        </a>
-        <a href="all-orders.html" class="quick-action-btn">
-            <span class="quick-action-icon">📋</span>
-            <span class="quick-action-text">View Orders</span>
-        </a>
-        <a href="reports.html" class="quick-action-btn">
-            <span class="quick-action-icon">📊</span>
-            <span class="quick-action-text">View Reports</span>
-        </a>
-    </div>
-
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <div class="content">
@@ -335,6 +287,26 @@
                     <div class="kpi-label">New Customers</div>
                     <a href="all-customers.html" class="kpi-link">View All →</a>
                 </div>
+            </div>
+
+            <!-- QUICK ACTIONS BAR -->
+            <div class="quick-actions-bar">
+                <a href="../order-form.html" class="action-btn primary">
+                    <span class="action-icon">➕</span>
+                    <span>Create New Order</span>
+                </a>
+                <a href="new-customer.html" class="action-btn">
+                    <span class="action-icon">👤</span>
+                    <span>Add Customer</span>
+                </a>
+                <a href="all-orders.html" class="action-btn">
+                    <span class="action-icon">📋</span>
+                    <span>View Orders</span>
+                </a>
+                <a href="reports.html" class="action-btn">
+                    <span class="action-icon">📊</span>
+                    <span>View Reports</span>
+                </a>
             </div>
 
             <!-- CHARTS SECTION (BELOW KPIs) -->

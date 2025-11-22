@@ -60,51 +60,53 @@
             font-weight: 500;
         }
 
-        /* Quick Action Buttons Bar - Smaller */
+        /* Quick Action Buttons Bar - Compact & Offset */
         .quick-actions-bar {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
             margin-bottom: 10px;
+            margin-top: 14px;
         }
 
         .action-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            padding: 8px 12px;
+            gap: 5px;
+            padding: 6px 10px;
             background: white;
             border: 2px solid #E5E7EB;
-            border-radius: 6px;
+            border-radius: 5px;
             text-decoration: none;
             color: #374151;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 11px;
             transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
         }
 
         .action-btn:hover {
             border-color: #C44569;
             background: #FDF2F8;
             transform: translateY(-1px);
-            box-shadow: 0 2px 6px rgba(196, 69, 105, 0.15);
+            box-shadow: 0 3px 10px rgba(196, 69, 105, 0.2);
         }
 
         .action-btn.primary {
             background: linear-gradient(135deg, #C44569, #9A3350);
             color: white;
             border-color: transparent;
+            box-shadow: 0 2px 6px rgba(196, 69, 105, 0.25);
         }
 
         .action-btn.primary:hover {
             background: linear-gradient(135deg, #A33555, #7A2741);
-            box-shadow: 0 2px 8px rgba(196, 69, 105, 0.3);
+            box-shadow: 0 3px 10px rgba(196, 69, 105, 0.4);
         }
 
         .action-icon {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         /* Charts Section - Smaller */
