@@ -19,3 +19,9 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Local development state
+.local/
+
+# Unused files
+styles/

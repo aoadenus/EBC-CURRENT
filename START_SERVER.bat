@@ -20,10 +20,13 @@ if %errorlevel% equ 0 (
     echo Access the website at:
     echo http://localhost:8000
     echo.
-    echo Staff Login Demo:
+    echo Staff Login Demo Accounts:
     echo http://localhost:8000/staff-login.html
-    echo Username: admin
-    echo Password: password
+    echo   Manager:    manager@emilybakes.com / test
+    echo   Sales:      sales@emilybakes.com / test
+    echo   Baker:      baker@emilybakes.com / test
+    echo   Decorator:  decorator@emilybakes.com / test
+    echo   Accountant: accountant@emilybakes.com / test
     echo.
     echo Press Ctrl+C to stop the server
     echo.
@@ -40,10 +43,13 @@ if %errorlevel% equ 0 (
     echo Access the website at:
     echo http://localhost:8000
     echo.
-    echo Staff Login Demo:
+    echo Staff Login Demo Accounts:
     echo http://localhost:8000/staff-login.html
-    echo Username: admin
-    echo Password: password
+    echo   Manager:    manager@emilybakes.com / test
+    echo   Sales:      sales@emilybakes.com / test
+    echo   Baker:      baker@emilybakes.com / test
+    echo   Decorator:  decorator@emilybakes.com / test
+    echo   Accountant: accountant@emilybakes.com / test
     echo.
     echo Press Ctrl+C to stop the server
     echo.
