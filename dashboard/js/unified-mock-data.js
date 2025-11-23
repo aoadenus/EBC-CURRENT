@@ -394,12 +394,13 @@ const unifiedMockData = {
         { id: 2010, customerId: 16, productId: 4, orderDate: "2025-11-21", pickupDate: "2025-11-23", pickupTime: "18:00", totalPrice: 92.0, depositAmount: 46.0, statusId: 4, notes: "Dinner party dessert", isCancelled: "N", cakeSize: "9\"", decorationNotes: "Elegant white frosting" },
         
         // TODAY'S ACTIVE ORDERS - IN PROGRESS (STATUS 1-3)
-        { id: 2011, customerId: 11, productId: 3, orderDate: "2025-11-23", pickupDate: "2025-11-24", pickupTime: "10:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 1, notes: "Just ordered today - needs to be created", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Rainbow theme" },
-        { id: 2012, customerId: 19, productId: 5, orderDate: "2025-11-23", pickupDate: "2025-11-24", pickupTime: "14:00", totalPrice: 45.0, depositAmount: 22.5, statusId: 1, notes: "New order - to be created", isCancelled: "N", cakeSize: "6\"", decorationNotes: "Simple" },
-        { id: 2013, customerId: 8, productId: 2, orderDate: "2025-11-22", pickupDate: "2025-11-24", pickupTime: "11:00", totalPrice: 75.0, depositAmount: 37.5, statusId: 2, notes: "Currently baking", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Chocolate icing" },
-        { id: 2014, customerId: 22, productId: 6, orderDate: "2025-11-22", pickupDate: "2025-11-24", pickupTime: "15:00", totalPrice: 110.0, depositAmount: 55.0, statusId: 2, notes: "In oven now", isCancelled: "N", cakeSize: "10\"", decorationNotes: "Vanilla buttercream" },
-        { id: 2015, customerId: 6, productId: 4, orderDate: "2025-11-22", pickupDate: "2025-11-24", pickupTime: "13:00", totalPrice: 95.0, depositAmount: 47.5, statusId: 3, notes: "Being decorated now", isCancelled: "N", cakeSize: "9\"", decorationNotes: "Floral design in progress" },
-        { id: 2016, customerId: 15, productId: 1, orderDate: "2025-11-22", pickupDate: "2025-11-24", pickupTime: "16:00", totalPrice: 82.0, depositAmount: 41.0, statusId: 3, notes: "Final decorations", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Custom message being added" },
+        { id: 2011, customerId: 11, productId: 3, orderDate: "2025-11-23", pickupDate: "2025-11-23", pickupTime: "10:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 1, notes: "Just ordered today - needs to be created", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Rainbow theme" },
+        { id: 2012, customerId: 19, productId: 5, orderDate: "2025-11-23", pickupDate: "2025-11-23", pickupTime: "14:00", totalPrice: 45.0, depositAmount: 22.5, statusId: 1, notes: "New order - to be created", isCancelled: "N", cakeSize: "6\"", decorationNotes: "Simple" },
+        { id: 2013, customerId: 8, productId: 2, orderDate: "2025-11-22", pickupDate: "2025-11-23", pickupTime: "11:00", totalPrice: 75.0, depositAmount: 37.5, statusId: 2, notes: "Currently baking", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Chocolate icing" },
+        { id: 2014, customerId: 22, productId: 6, orderDate: "2025-11-22", pickupDate: "2025-11-23", pickupTime: "15:00", totalPrice: 110.0, depositAmount: 55.0, statusId: 2, notes: "In oven now", isCancelled: "N", cakeSize: "10\"", decorationNotes: "Vanilla buttercream" },
+        { id: 2015, customerId: 6, productId: 4, orderDate: "2025-11-22", pickupDate: "2025-11-23", pickupTime: "13:00", totalPrice: 95.0, depositAmount: 47.5, statusId: 3, notes: "Being decorated now", isCancelled: "N", cakeSize: "9\"", decorationNotes: "Floral design in progress" },
+        { id: 2016, customerId: 15, productId: 1, orderDate: "2025-11-22", pickupDate: "2025-11-23", pickupTime: "16:00", totalPrice: 82.0, depositAmount: 41.0, statusId: 3, notes: "Final decorations", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Custom message being added" },
+        { id: 2017, customerId: 20, productId: 5, orderDate: "2025-11-23", pickupDate: "2025-11-23", pickupTime: "19:00", totalPrice: 45.0, depositAmount: 22.5, statusId: 1, notes: "Customer changed mind - allergy concern", isCancelled: "Y", cakeSize: "6\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 24 - PICKUPS (10 ORDERS)
@@ -413,7 +414,9 @@ const unifiedMockData = {
         { id: 2107, customerId: 2, productId: 7, orderDate: "2025-11-22", pickupDate: "2025-11-24", pickupTime: "15:30", totalPrice: 98.0, depositAmount: 49.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2108, customerId: 28, productId: 1, orderDate: "2025-11-23", pickupDate: "2025-11-24", pickupTime: "16:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 1, notes: "New order today", isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2109, customerId: 26, productId: 2, orderDate: "2025-11-23", pickupDate: "2025-11-24", pickupTime: "17:00", totalPrice: 68.0, depositAmount: 34.0, statusId: 1, notes: "New order today", isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
-        { id: 2110, customerId: 29, productId: 3, orderDate: "2025-11-23", pickupDate: "2025-11-24", pickupTime: "18:00", totalPrice: 115.0, depositAmount: 57.5, statusId: 1, notes: "New order today", isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
+        { id: 2110, customerId: 29, productId: 3, orderDate: "2025-11-23", pickupDate: "2025-11-24", pickupTime: "18:00", totalPrice: 115.0, depositAmount: 57.5, statusId: 5, notes: "Picked up early", isCancelled: "N", cakeSize: "10\"", decorationNotes: "Completed" },
+        { id: 2111, customerId: 12, productId: 4, orderDate: "2025-11-20", pickupDate: "2025-11-24", pickupTime: "09:00", totalPrice: 92.0, depositAmount: 46.0, statusId: 1, notes: "Customer cancelled - schedule conflict", isCancelled: "Y", cakeSize: "9\"", decorationNotes: null },
+        { id: 2112, customerId: 5, productId: 3, orderDate: "2025-11-24", pickupDate: "2025-11-24", pickupTime: "19:30", totalPrice: 105.0, depositAmount: 52.5, statusId: 2, notes: "Cancelled - event postponed", isCancelled: "Y", cakeSize: "10\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 25 - PICKUPS (10 ORDERS)
@@ -426,8 +429,10 @@ const unifiedMockData = {
         { id: 2206, customerId: 21, productId: 2, orderDate: "2025-11-24", pickupDate: "2025-11-25", pickupTime: "14:00", totalPrice: 72.0, depositAmount: 36.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2207, customerId: 9, productId: 3, orderDate: "2025-11-24", pickupDate: "2025-11-25", pickupTime: "15:00", totalPrice: 118.0, depositAmount: 59.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2208, customerId: 25, productId: 4, orderDate: "2025-11-24", pickupDate: "2025-11-25", pickupTime: "16:00", totalPrice: 92.0, depositAmount: 46.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
-        { id: 2209, customerId: 3, productId: 5, orderDate: "2025-11-24", pickupDate: "2025-11-25", pickupTime: "17:00", totalPrice: 45.0, depositAmount: 22.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
+        { id: 2209, customerId: 3, productId: 5, orderDate: "2025-11-24", pickupDate: "2025-11-25", pickupTime: "17:00", totalPrice: 45.0, depositAmount: 22.5, statusId: 5, notes: "Picked up on time", isCancelled: "N", cakeSize: "6\"", decorationNotes: "Completed" },
         { id: 2210, customerId: 16, productId: 6, orderDate: "2025-11-23", pickupDate: "2025-11-25", pickupTime: "18:00", totalPrice: 125.0, depositAmount: 62.5, statusId: 4, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
+        { id: 2211, customerId: 11, productId: 1, orderDate: "2025-11-25", pickupDate: "2025-11-25", pickupTime: "19:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 1, notes: "Customer cancelled - duplicate order", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
+        { id: 2212, customerId: 8, productId: 7, orderDate: "2025-11-23", pickupDate: "2025-11-25", pickupTime: "20:00", totalPrice: 102.0, depositAmount: 51.0, statusId: 3, notes: "Baker cancelled - ingredient shortage", isCancelled: "Y", cakeSize: "10\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 26 - PICKUPS (10 ORDERS)
@@ -440,8 +445,10 @@ const unifiedMockData = {
         { id: 2306, customerId: 15, productId: 5, orderDate: "2025-11-25", pickupDate: "2025-11-26", pickupTime: "14:00", totalPrice: 42.0, depositAmount: 21.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
         { id: 2307, customerId: 27, productId: 6, orderDate: "2025-11-25", pickupDate: "2025-11-26", pickupTime: "15:00", totalPrice: 128.0, depositAmount: 64.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
         { id: 2308, customerId: 1, productId: 7, orderDate: "2025-11-25", pickupDate: "2025-11-26", pickupTime: "16:00", totalPrice: 105.0, depositAmount: 52.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
-        { id: 2309, customerId: 24, productId: 1, orderDate: "2025-11-25", pickupDate: "2025-11-26", pickupTime: "17:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
+        { id: 2309, customerId: 24, productId: 1, orderDate: "2025-11-25", pickupDate: "2025-11-26", pickupTime: "17:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Completed" },
         { id: 2310, customerId: 30, productId: 2, orderDate: "2025-11-24", pickupDate: "2025-11-26", pickupTime: "18:00", totalPrice: 72.0, depositAmount: 36.0, statusId: 4, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
+        { id: 2311, customerId: 17, productId: 4, orderDate: "2025-11-26", pickupDate: "2025-11-26", pickupTime: "19:00", totalPrice: 92.0, depositAmount: 46.0, statusId: 1, notes: "Customer no-show, order cancelled", isCancelled: "Y", cakeSize: "9\"", decorationNotes: null },
+        { id: 2312, customerId: 25, productId: 5, orderDate: "2025-11-25", pickupDate: "2025-11-26", pickupTime: "20:00", totalPrice: 48.0, depositAmount: 24.0, statusId: 2, notes: "Cancelled - payment issue", isCancelled: "Y", cakeSize: "6\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 27 - PICKUPS (10 ORDERS)
@@ -453,9 +460,11 @@ const unifiedMockData = {
         { id: 2405, customerId: 17, productId: 7, orderDate: "2025-11-26", pickupDate: "2025-11-27", pickupTime: "12:30", totalPrice: 108.0, depositAmount: 54.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2406, customerId: 23, productId: 1, orderDate: "2025-11-26", pickupDate: "2025-11-27", pickupTime: "14:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2407, customerId: 2, productId: 2, orderDate: "2025-11-26", pickupDate: "2025-11-27", pickupTime: "15:00", totalPrice: 65.0, depositAmount: 32.5, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
-        { id: 2408, customerId: 28, productId: 3, orderDate: "2025-11-26", pickupDate: "2025-11-27", pickupTime: "16:00", totalPrice: 118.0, depositAmount: 59.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
+        { id: 2408, customerId: 28, productId: 3, orderDate: "2025-11-26", pickupDate: "2025-11-27", pickupTime: "16:00", totalPrice: 118.0, depositAmount: 59.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "10\"", decorationNotes: "Completed" },
         { id: 2409, customerId: 26, productId: 4, orderDate: "2025-11-26", pickupDate: "2025-11-27", pickupTime: "17:00", totalPrice: 95.0, depositAmount: 47.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
         { id: 2410, customerId: 29, productId: 5, orderDate: "2025-11-25", pickupDate: "2025-11-27", pickupTime: "18:00", totalPrice: 45.0, depositAmount: 22.5, statusId: 4, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
+        { id: 2411, customerId: 18, productId: 1, orderDate: "2025-11-24", pickupDate: "2025-11-27", pickupTime: "13:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 2, notes: "Customer cancelled - wrong date", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
+        { id: 2412, customerId: 9, productId: 6, orderDate: "2025-11-27", pickupDate: "2025-11-27", pickupTime: "19:30", totalPrice: 125.0, depositAmount: 62.5, statusId: 1, notes: "Cancelled - found alternative", isCancelled: "Y", cakeSize: "12\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 28 - PICKUPS (10 ORDERS)
@@ -467,9 +476,11 @@ const unifiedMockData = {
         { id: 2505, customerId: 14, productId: 3, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "12:00", totalPrice: 112.0, depositAmount: 56.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2506, customerId: 21, productId: 4, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "14:00", totalPrice: 98.0, depositAmount: 49.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
         { id: 2507, customerId: 9, productId: 5, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "15:00", totalPrice: 42.0, depositAmount: 21.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
-        { id: 2508, customerId: 25, productId: 6, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "16:00", totalPrice: 135.0, depositAmount: 67.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
+        { id: 2508, customerId: 25, productId: 6, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "16:00", totalPrice: 135.0, depositAmount: 67.5, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "12\"", decorationNotes: "Completed" },
         { id: 2509, customerId: 3, productId: 7, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "17:00", totalPrice: 105.0, depositAmount: 52.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2510, customerId: 16, productId: 1, orderDate: "2025-11-26", pickupDate: "2025-11-28", pickupTime: "18:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 4, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
+        { id: 2511, customerId: 22, productId: 3, orderDate: "2025-11-28", pickupDate: "2025-11-28", pickupTime: "19:00", totalPrice: 115.0, depositAmount: 57.5, statusId: 2, notes: "Cancelled - wrong flavor ordered", isCancelled: "Y", cakeSize: "10\"", decorationNotes: null },
+        { id: 2512, customerId: 6, productId: 2, orderDate: "2025-11-27", pickupDate: "2025-11-28", pickupTime: "20:00", totalPrice: 68.0, depositAmount: 34.0, statusId: 1, notes: "Customer requested cancellation", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 29 - PICKUPS (10 ORDERS)
@@ -481,9 +492,11 @@ const unifiedMockData = {
         { id: 2605, customerId: 6, productId: 6, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "12:30", totalPrice: 128.0, depositAmount: 64.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
         { id: 2606, customerId: 15, productId: 7, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "14:00", totalPrice: 102.0, depositAmount: 51.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2607, customerId: 27, productId: 1, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "15:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
-        { id: 2608, customerId: 1, productId: 2, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "16:00", totalPrice: 72.0, depositAmount: 36.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
+        { id: 2608, customerId: 1, productId: 2, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "16:00", totalPrice: 72.0, depositAmount: 36.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Completed" },
         { id: 2609, customerId: 24, productId: 3, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "17:00", totalPrice: 118.0, depositAmount: 59.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2610, customerId: 30, productId: 4, orderDate: "2025-11-27", pickupDate: "2025-11-29", pickupTime: "18:00", totalPrice: 95.0, depositAmount: 47.5, statusId: 4, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
+        { id: 2611, customerId: 13, productId: 7, orderDate: "2025-11-29", pickupDate: "2025-11-29", pickupTime: "19:00", totalPrice: 105.0, depositAmount: 52.5, statusId: 1, notes: "Cancelled - changed event date", isCancelled: "Y", cakeSize: "10\"", decorationNotes: null },
+        { id: 2612, customerId: 19, productId: 1, orderDate: "2025-11-28", pickupDate: "2025-11-29", pickupTime: "20:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 3, notes: "Baker issue - had to cancel", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // NOV 30 - PICKUPS (10 ORDERS)
@@ -495,9 +508,11 @@ const unifiedMockData = {
         { id: 2705, customerId: 17, productId: 2, orderDate: "2025-11-29", pickupDate: "2025-11-30", pickupTime: "12:00", totalPrice: 68.0, depositAmount: 34.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2706, customerId: 23, productId: 3, orderDate: "2025-11-29", pickupDate: "2025-11-30", pickupTime: "14:00", totalPrice: 112.0, depositAmount: 56.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
         { id: 2707, customerId: 2, productId: 4, orderDate: "2025-11-29", pickupDate: "2025-11-30", pickupTime: "15:00", totalPrice: 98.0, depositAmount: 49.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
-        { id: 2708, customerId: 28, productId: 5, orderDate: "2025-11-29", pickupDate: "2025-11-30", pickupTime: "16:00", totalPrice: 42.0, depositAmount: 21.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
+        { id: 2708, customerId: 28, productId: 5, orderDate: "2025-11-29", pickupDate: "2025-11-30", pickupTime: "16:00", totalPrice: 42.0, depositAmount: 21.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "6\"", decorationNotes: "Completed" },
         { id: 2709, customerId: 26, productId: 6, orderDate: "2025-11-29", pickupDate: "2025-11-30", pickupTime: "17:00", totalPrice: 125.0, depositAmount: 62.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
         { id: 2710, customerId: 29, productId: 7, orderDate: "2025-11-28", pickupDate: "2025-11-30", pickupTime: "18:00", totalPrice: 102.0, depositAmount: 51.0, statusId: 4, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
+        { id: 2711, customerId: 14, productId: 2, orderDate: "2025-11-27", pickupDate: "2025-11-30", pickupTime: "11:00", totalPrice: 68.0, depositAmount: 34.0, statusId: 1, notes: "Customer no-show, cancelled", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
+        { id: 2712, customerId: 27, productId: 4, orderDate: "2025-11-30", pickupDate: "2025-11-30", pickupTime: "19:00", totalPrice: 95.0, depositAmount: 47.5, statusId: 2, notes: "Cancelled - too expensive", isCancelled: "Y", cakeSize: "9\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // DEC 1 - PICKUPS (10 ORDERS)
@@ -509,9 +524,11 @@ const unifiedMockData = {
         { id: 2805, customerId: 14, productId: 5, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "12:30", totalPrice: 48.0, depositAmount: 24.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
         { id: 2806, customerId: 21, productId: 6, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "14:00", totalPrice: 135.0, depositAmount: 67.5, statusId: 2, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
         { id: 2807, customerId: 9, productId: 7, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "15:00", totalPrice: 108.0, depositAmount: 54.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
-        { id: 2808, customerId: 25, productId: 1, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "16:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
+        { id: 2808, customerId: 25, productId: 1, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "16:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "8\"", decorationNotes: "Completed" },
         { id: 2809, customerId: 3, productId: 2, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "17:00", totalPrice: 65.0, depositAmount: 32.5, statusId: 3, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2810, customerId: 16, productId: 3, orderDate: "2025-11-29", pickupDate: "2025-12-01", pickupTime: "18:00", totalPrice: 115.0, depositAmount: 57.5, statusId: 4, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
+        { id: 2811, customerId: 4, productId: 5, orderDate: "2025-12-01", pickupDate: "2025-12-01", pickupTime: "19:30", totalPrice: 45.0, depositAmount: 22.5, statusId: 1, notes: "Cancelled - party cancelled", isCancelled: "Y", cakeSize: "6\"", decorationNotes: null },
+        { id: 2812, customerId: 11, productId: 6, orderDate: "2025-11-30", pickupDate: "2025-12-01", pickupTime: "20:00", totalPrice: 135.0, depositAmount: 67.5, statusId: 2, notes: "Customer changed mind", isCancelled: "Y", cakeSize: "12\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // DEC 2 - PICKUPS (10 ORDERS)
@@ -523,9 +540,11 @@ const unifiedMockData = {
         { id: 2905, customerId: 6, productId: 1, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "12:00", totalPrice: 85.0, depositAmount: 42.5, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2906, customerId: 15, productId: 2, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "14:00", totalPrice: 68.0, depositAmount: 34.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 2907, customerId: 27, productId: 3, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "15:00", totalPrice: 112.0, depositAmount: 56.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
-        { id: 2908, customerId: 1, productId: 4, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "16:00", totalPrice: 98.0, depositAmount: 49.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
+        { id: 2908, customerId: 1, productId: 4, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "16:00", totalPrice: 98.0, depositAmount: 49.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "9\"", decorationNotes: "Completed" },
         { id: 2909, customerId: 24, productId: 5, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "17:00", totalPrice: 42.0, depositAmount: 21.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
         { id: 2910, customerId: 30, productId: 6, orderDate: "2025-11-30", pickupDate: "2025-12-02", pickupTime: "18:00", totalPrice: 132.0, depositAmount: 66.0, statusId: 4, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
+        { id: 2911, customerId: 10, productId: 1, orderDate: "2025-12-02", pickupDate: "2025-12-02", pickupTime: "19:00", totalPrice: 78.0, depositAmount: 39.0, statusId: 1, notes: "Cancelled last minute", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
+        { id: 2912, customerId: 23, productId: 7, orderDate: "2025-12-01", pickupDate: "2025-12-02", pickupTime: "20:00", totalPrice: 102.0, depositAmount: 51.0, statusId: 3, notes: "Quality issue - cancelled", isCancelled: "Y", cakeSize: "10\"", decorationNotes: null },
         
         // ═══════════════════════════════════════════════════════════
         // DEC 3 - PICKUPS (10 ORDERS)
@@ -537,9 +556,11 @@ const unifiedMockData = {
         { id: 3005, customerId: 17, productId: 4, orderDate: "2025-12-02", pickupDate: "2025-12-03", pickupTime: "12:30", totalPrice: 95.0, depositAmount: 47.5, statusId: 2, notes: null, isCancelled: "N", cakeSize: "9\"", decorationNotes: null },
         { id: 3006, customerId: 23, productId: 5, orderDate: "2025-12-02", pickupDate: "2025-12-03", pickupTime: "14:00", totalPrice: 48.0, depositAmount: 24.0, statusId: 2, notes: null, isCancelled: "N", cakeSize: "6\"", decorationNotes: null },
         { id: 3007, customerId: 2, productId: 6, orderDate: "2025-12-02", pickupDate: "2025-12-03", pickupTime: "15:00", totalPrice: 135.0, depositAmount: 67.5, statusId: 2, notes: null, isCancelled: "N", cakeSize: "12\"", decorationNotes: null },
-        { id: 3008, customerId: 28, productId: 7, orderDate: "2025-12-02", pickupDate: "2025-12-03", pickupTime: "16:00", totalPrice: 102.0, depositAmount: 51.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "10\"", decorationNotes: null },
+        { id: 3008, customerId: 28, productId: 7, orderDate: "2025-12-02", pickupDate: "2025-12-03", pickupTime: "16:00", totalPrice: 102.0, depositAmount: 51.0, statusId: 5, notes: "Picked up", isCancelled: "N", cakeSize: "10\"", decorationNotes: "Completed" },
         { id: 3009, customerId: 26, productId: 1, orderDate: "2025-12-02", pickupDate: "2025-12-03", pickupTime: "17:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 3, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
         { id: 3010, customerId: 29, productId: 2, orderDate: "2025-12-01", pickupDate: "2025-12-03", pickupTime: "18:00", totalPrice: 65.0, depositAmount: 32.5, statusId: 4, notes: null, isCancelled: "N", cakeSize: "8\"", decorationNotes: null },
+        { id: 3011, customerId: 7, productId: 3, orderDate: "2025-11-30", pickupDate: "2025-12-03", pickupTime: "10:30", totalPrice: 105.0, depositAmount: 52.5, statusId: 3, notes: "Customer requested changes - unable to fulfill", isCancelled: "Y", cakeSize: "10\"", decorationNotes: null },
+        { id: 3012, customerId: 15, productId: 2, orderDate: "2025-12-03", pickupDate: "2025-12-03", pickupTime: "19:30", totalPrice: 68.0, depositAmount: 34.0, statusId: 1, notes: "Cancelled - weather conditions", isCancelled: "Y", cakeSize: "8\"", decorationNotes: null },
         
         // --- Mock Cancelled by Baker ---
         { id: 9998, customerId: 7, productId: 2, orderDate: "2025-11-21", pickupDate: "2025-11-23", pickupTime: "10:00", totalPrice: 88.0, depositAmount: 44.0, statusId: 1, notes: "Cancelled by baker due to kitchen issue; customer notified and refund issued.", isCancelled: "Y", cakeSize: "10\"", decorationNotes: "N/A" },
@@ -672,21 +693,43 @@ const unifiedMockData = {
     },
 
     getRecentOrders: function(limit = 10) {
-        return this.orders
-            .sort((a, b) => {
-                const dateA = new Date(a.orderDate);
-                const dateB = new Date(b.orderDate);
-                if (dateB - dateA !== 0) return dateB - dateA;
-                return b.id - a.id;
-            })
-            .slice(0, limit)
-            .map(order => ({
+        const today = '2025-11-23'; // Demo date
+        
+        // Get today's orders first (non-cancelled)
+        const todaysOrders = this.orders
+            .filter(o => o.orderDate === today && o.isCancelled !== 'Y')
+            .sort((a, b) => b.id - a.id);
+        
+        // If we have enough today's orders, return only those
+        if (todaysOrders.length >= limit) {
+            return todaysOrders.slice(0, limit).map(order => ({
                 id: order.id,
                 customer: this.getCustomerName(order.customerId),
                 product: this.getProductName(order.productId),
                 orderDate: order.orderDate,
                 status: this.getStatusDescription(order.statusId),
                 statusId: order.statusId
+            }));
+        }
+        
+        // Otherwise, pad with recent orders from other days
+        const otherOrders = this.orders
+            .filter(o => o.orderDate !== today && o.isCancelled !== 'Y')
+            .sort((a, b) => {
+                const dateA = new Date(a.orderDate);
+                const dateB = new Date(b.orderDate);
+                if (dateB - dateA !== 0) return dateB - dateA;
+                return b.id - a.id;
+            })
+            .slice(0, limit - todaysOrders.length);
+        
+        return [...todaysOrders, ...otherOrders].map(order => ({
+            id: order.id,
+            customer: this.getCustomerName(order.customerId),
+            product: this.getProductName(order.productId),
+            orderDate: order.orderDate,
+            status: this.getStatusDescription(order.statusId),
+            statusId: order.statusId
             }));
     },
 

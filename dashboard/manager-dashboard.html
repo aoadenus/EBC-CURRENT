@@ -452,25 +452,34 @@
         // Set manager role
         localStorage.setItem('staffRole', 'manager');
         
-        // Update KPIs
+        // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
+        const today = '2025-11-23';
+        
+        // Calculate KPIs from real data - orders placed today
+        const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === today && o.isCancelled !== 'Y');
+        const totalOrdersToday = todaysOrders.length;
+        const ordersInProduction = todaysOrders.filter(o => o.statusId === 2 || o.statusId === 3).length;
+        const completedToday = todaysOrders.filter(o => o.statusId === 4 || o.statusId === 5).length;
+        const todaysRevenue = todaysOrders.reduce((sum, o) => sum + o.totalPrice, 0);
+        
+        // Update KPI displays
         console.log('Updating KPIs...');
-        document.getElementById('total-orders-today').textContent = unifiedMockData.metrics.today.totalOrders;
+        document.getElementById('total-orders-today').textContent = totalOrdersToday;
         document.getElementById('last-order-time').textContent = `Last order: ${unifiedMockData.metrics.today.lastOrderTime}`;
         
-        document.getElementById('orders-in-production').textContent = unifiedMockData.metrics.today.ordersInProduction;
+        document.getElementById('orders-in-production').textContent = ordersInProduction;
         document.getElementById('longest-production').textContent = `Longest: ${unifiedMockData.metrics.today.longestInProduction}`;
         
-        document.getElementById('completed-orders-today').textContent = unifiedMockData.metrics.today.completedToday;
+        document.getElementById('completed-orders-today').textContent = completedToday;
         document.getElementById('avg-completion').textContent = `Avg: ${unifiedMockData.metrics.today.avgCompletionTime}`;
         
-        // Calculate cancellations from real data
-        const today = new Date().toISOString().split('T')[0];
-        const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y');
-        const cancellationsWeek = cancelledOrders.length;
+        // Calculate cancellations from today's orders
+        const cancelledOrders = unifiedMockData.orders.filter(o => o.orderDate === today && o.isCancelled === 'Y');
+        const cancellationsToday = cancelledOrders.length;
         const cancellationRevenue = cancelledOrders.reduce((sum, o) => sum + o.depositAmount, 0);
         
-        document.getElementById('cancellations-week').textContent = cancellationsWeek;
-        document.getElementById('cancel-reason').textContent = cancellationsWeek === 0 ? 'No cancellations' : `Lost revenue: $${cancellationRevenue.toFixed(2)}`;
+        document.getElementById('cancellations-week').textContent = cancellationsToday;
+        document.getElementById('cancel-reason').textContent = cancellationsToday === 0 ? 'No cancellations' : `Lost revenue: $${cancellationRevenue.toFixed(2)}`;
         
         // Revenue comparison
         const percentChange = unifiedMockData.metrics.weekly.percentChange;
@@ -511,16 +520,27 @@
         
         tbody.innerHTML = recentOrders.map(order => {
             const fullOrder = unifiedMockData.orders.find(o => o.id === order.id);
-            const statusClass = order.status.toLowerCase().replace(/ /g, '-');
+            const statusClass = getStatusClass(order.statusId);
             return `
                 <tr>
                     <td><strong>#${order.id}</strong></td>
                     <td>${order.customer}</td>
-                    <td><span class="status-badge status-${statusClass}">${order.status}</span></td>
+                    <td><span class="status-badge ${statusClass}">${order.status}</span></td>
                     <td><strong>$${fullOrder.totalPrice.toFixed(2)}</strong></td>
                 </tr>
             `;
         }).join('');
+    }
+    
+    function getStatusClass(statusId) {
+        const classes = {
+            1: 'status-pending',
+            2: 'status-baking',
+            3: 'status-decorating',
+            4: 'status-ready',
+            5: 'status-completed'
+        };
+        return classes[statusId] || 'status-pending';
     }
 
     function populateTodaysPickups() {
@@ -530,7 +550,7 @@
             return;
         }
         
-        const today = new Date().toISOString().split('T')[0];
+        const today = '2025-11-23'; // Demo date
         const pickups = unifiedMockData.getUpcomingPickups(today);
         
         if (pickups.length === 0) {
@@ -555,10 +575,7 @@
             return;
         }
         
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const tomorrowDate = tomorrow.toISOString().split('T')[0];
+        const tomorrowDate = '2025-11-24'; // Demo date (tomorrow)
         
         const tomorrowsOrders = unifiedMockData.orders
             .filter(o => o.pickupDate === tomorrowDate)

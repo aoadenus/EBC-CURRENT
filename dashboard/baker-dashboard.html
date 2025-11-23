@@ -357,30 +357,20 @@
         function initializeBakerDashboard() {
             localStorage.setItem('staffRole', 'baker');
             
-            // Get today's date in YYYY-MM-DD format
-            const today = new Date().toISOString().split('T')[0];
+            // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
+            const today = '2025-11-23';
             
-            // Calculate KPIs - only for orders with today's pickup date
-            const ordersToBake = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
-                o.statusId === 1 && 
+            // Calculate KPIs - only for orders PLACED today (orderDate)
+            const todaysOrders = unifiedMockData.orders.filter(o => 
+                o.orderDate === today && 
                 o.isCancelled !== 'Y'
-            ).length;
+            );
             
-            const inBaking = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
-                o.statusId === 2 && 
-                o.isCancelled !== 'Y'
-            ).length;
-            
-            const readyDecoration = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
-                o.statusId === 3 && 
-                o.isCancelled !== 'Y'
-            ).length;
-            
+            const ordersToBake = todaysOrders.filter(o => o.statusId === 1).length;
+            const inBaking = todaysOrders.filter(o => o.statusId === 2).length;
+            const readyDecoration = todaysOrders.filter(o => o.statusId === 3).length;
             const cancelledToday = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
+                o.orderDate === today && 
                 o.isCancelled === 'Y'
             ).length;
             
@@ -401,7 +391,7 @@
         }
 
         function populateBakingQueue() {
-            const today = new Date().toISOString().split('T')[0];
+            const today = '2025-11-23'; // Demo date
             const tbody = document.getElementById('baking-queue-tbody');
             const queue = unifiedMockData.orders.filter(o => 
                 o.pickupDate === today && 
@@ -426,7 +416,7 @@
         }
 
         function populateMovingToDecorating() {
-            const today = new Date().toISOString().split('T')[0];
+            const today = '2025-11-23'; // Demo date
             const tbody = document.getElementById('decorating-tbody');
             const ready = unifiedMockData.orders.filter(o => 
                 o.pickupDate === today && 
@@ -480,7 +470,8 @@
         }
 
         function populateCancelledOrders() {
-            const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y');
+            const today = '2025-11-23'; // Demo date
+            const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y' && (o.pickupDate === today || o.orderDate === today));
             const tbody = document.getElementById('cancelled-tbody');
             
             if (cancelledOrders.length === 0) {

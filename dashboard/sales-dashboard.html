@@ -449,14 +449,16 @@
             console.log('Initializing Sales Dashboard...');
             localStorage.setItem('staffRole', 'sales');
             
-            // Get today's date in YYYY-MM-DD format
-            const today = new Date().toISOString().split('T')[0];
+            // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
+            const today = '2025-11-23';
             
-            // Calculate KPIs
-            const ordersCreatedToday = unifiedMockData.orders.filter(o => o.orderDate === today).length;
-            const scheduledPickupsToday = unifiedMockData.orders.filter(o => o.pickupDate === today).length;
-            const readyNow = unifiedMockData.orders.filter(o => o.statusId === 4).length;
-            const newCustomersWeek = 8;
+            // Calculate KPIs - orders placed today
+            const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === today && o.isCancelled !== 'Y');
+            const ordersCreatedToday = todaysOrders.length;
+            const scheduledPickupsToday = unifiedMockData.orders.filter(o => o.pickupDate === today && o.isCancelled !== 'Y').length;
+            const readyNow = todaysOrders.filter(o => o.statusId === 4).length;
+            const todaysRevenue = todaysOrders.reduce((sum, o) => sum + o.totalPrice, 0);
+            const newCustomersWeek = 8; // Mock value
             
             // Update KPI displays
             document.getElementById('orders-created-today').textContent = ordersCreatedToday;
@@ -518,7 +520,7 @@
             const tbody = document.getElementById('todays-pickups-tbody');
             if (!tbody) return;
             
-            const today = new Date().toISOString().split('T')[0];
+            const today = '2025-11-23'; // Demo date
             const pickups = unifiedMockData.getUpcomingPickups(today);
             
             tbody.innerHTML = pickups.map(pickup => `
@@ -535,10 +537,7 @@
             const container = document.getElementById('tomorrows-schedule');
             if (!container) return;
             
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            const tomorrowDate = tomorrow.toISOString().split('T')[0];
+            const tomorrowDate = '2025-11-24'; // Demo date (tomorrow)
             
             const tomorrowsOrders = unifiedMockData.orders
                 .filter(o => o.pickupDate === tomorrowDate)
