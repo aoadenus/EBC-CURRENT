@@ -357,27 +357,34 @@
         function initializeBakerDashboard() {
             localStorage.setItem('staffRole', 'baker');
             
-            // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
-            const today = '2025-11-23';
+            // ═══════════════════════════════════════════════════════
+            // BAKER DASHBOARD - KPIs and Tables
+            // ═══════════════════════════════════════════════════════
+            
+            const TODAY = '2025-11-23';
             
             // Calculate KPIs - only for orders PLACED today (orderDate)
             const todaysOrders = unifiedMockData.orders.filter(o => 
-                o.orderDate === today && 
-                o.isCancelled !== 'Y'
+                o.orderDate === TODAY && 
+                o.isCancelled === 'N'
             );
             
+            // KPI 1: Orders To Bake Today (Status 1, orderDate today)
             const ordersToBake = todaysOrders.filter(o => o.statusId === 1).length;
+            
+            // KPI 2: Currently Baking Today (Status 2, orderDate today)
             const inBaking = todaysOrders.filter(o => o.statusId === 2).length;
-            const readyDecoration = todaysOrders.filter(o => o.statusId === 3).length;
-            const cancelledToday = unifiedMockData.orders.filter(o => 
-                o.orderDate === today && 
-                o.isCancelled === 'Y'
-            ).length;
+            
+            // KPI 3: Completed Today (Status >= 3, orderDate today)
+            const completedToday = todaysOrders.filter(o => o.statusId >= 3).length;
+            
+            // KPI 4: Total Today
+            const totalToday = todaysOrders.length;
             
             document.getElementById('orders-to-bake').textContent = ordersToBake;
             document.getElementById('in-baking').textContent = inBaking;
-            document.getElementById('ready-decoration').textContent = readyDecoration;
-            document.getElementById('cancelled-today').textContent = cancelledToday;
+            document.getElementById('ready-decoration').textContent = completedToday;
+            document.getElementById('cancelled-today').textContent = totalToday;
             
             populateBakingQueue();
             populateMovingToDecorating();
@@ -391,12 +398,12 @@
         }
 
         function populateBakingQueue() {
-            const today = '2025-11-23'; // Demo date
+            const TODAY = '2025-11-23'; // Demo date
             const tbody = document.getElementById('baking-queue-tbody');
             const queue = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
+                o.pickupDate === TODAY && 
                 (o.statusId === 1 || o.statusId === 2) && 
-                o.isCancelled !== 'Y'
+                o.isCancelled === 'N'
             ).slice(0, 8);
             
             if (queue.length === 0) {
@@ -416,12 +423,12 @@
         }
 
         function populateMovingToDecorating() {
-            const today = '2025-11-23'; // Demo date
+            const TODAY = '2025-11-23'; // Demo date
             const tbody = document.getElementById('decorating-tbody');
             const ready = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
+                o.pickupDate === TODAY && 
                 o.statusId === 3 && 
-                o.isCancelled !== 'Y'
+                o.isCancelled === 'N'
             ).slice(0, 8);
             
             if (ready.length === 0) {
@@ -470,8 +477,8 @@
         }
 
         function populateCancelledOrders() {
-            const today = '2025-11-23'; // Demo date
-            const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y' && (o.pickupDate === today || o.orderDate === today));
+            const TODAY = '2025-11-23'; // Demo date
+            const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y' && (o.pickupDate === TODAY || o.orderDate === TODAY));
             const tbody = document.getElementById('cancelled-tbody');
             
             if (cancelledOrders.length === 0) {

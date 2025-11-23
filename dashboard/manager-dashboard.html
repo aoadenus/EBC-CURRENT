@@ -452,15 +452,37 @@
         // Set manager role
         localStorage.setItem('staffRole', 'manager');
         
-        // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
-        const today = '2025-11-23';
+        // ═══════════════════════════════════════════════════════
+        // MANAGER DASHBOARD - KPIs and Tables
+        // ═══════════════════════════════════════════════════════
         
-        // Calculate KPIs from real data - orders placed today
-        const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === today && o.isCancelled !== 'Y');
+        const TODAY = '2025-11-23';
+        const WEEK_START = new Date('2025-11-21');
+        const WEEK_END = new Date('2025-11-27');
+        
+        // KPI 1: Total Orders Today (orderDate)
+        const todaysOrders = unifiedMockData.orders.filter(o =>
+            o.orderDate === TODAY && o.isCancelled === 'N'
+        );
         const totalOrdersToday = todaysOrders.length;
-        const ordersInProduction = todaysOrders.filter(o => o.statusId === 2 || o.statusId === 3).length;
-        const completedToday = todaysOrders.filter(o => o.statusId === 4 || o.statusId === 5).length;
-        const todaysRevenue = todaysOrders.reduce((sum, o) => sum + o.totalPrice, 0);
+        
+        // KPI 2: Orders In Production (Status 2 or 3, orderDate today)
+        const ordersInProduction = todaysOrders.filter(o =>
+            o.statusId === 2 || o.statusId === 3
+        ).length;
+        
+        // KPI 3: Completed Today (Status 4 or 5, orderDate today)
+        const completedToday = todaysOrders.filter(o =>
+            o.statusId === 4 || o.statusId === 5
+        ).length;
+        
+        // KPI 4: Cancellations This Week
+        const cancellations = unifiedMockData.orders.filter(o => {
+            const orderDate = new Date(o.orderDate);
+            return o.isCancelled === 'Y' && orderDate >= WEEK_START && orderDate <= WEEK_END;
+        });
+        const cancellationsCount = cancellations.length;
+        const cancellationRevenue = cancellations.reduce((sum, o) => sum + (o.depositAmount || 0), 0);
         
         // Update KPI displays
         console.log('Updating KPIs...');
@@ -473,13 +495,8 @@
         document.getElementById('completed-orders-today').textContent = completedToday;
         document.getElementById('avg-completion').textContent = `Avg: ${unifiedMockData.metrics.today.avgCompletionTime}`;
         
-        // Calculate cancellations from today's orders
-        const cancelledOrders = unifiedMockData.orders.filter(o => o.orderDate === today && o.isCancelled === 'Y');
-        const cancellationsToday = cancelledOrders.length;
-        const cancellationRevenue = cancelledOrders.reduce((sum, o) => sum + o.depositAmount, 0);
-        
-        document.getElementById('cancellations-week').textContent = cancellationsToday;
-        document.getElementById('cancel-reason').textContent = cancellationsToday === 0 ? 'No cancellations' : `Lost revenue: $${cancellationRevenue.toFixed(2)}`;
+        document.getElementById('cancellations-week').textContent = cancellationsCount;
+        document.getElementById('cancel-reason').textContent = cancellationsCount === 0 ? 'No cancellations' : `Lost revenue: $${cancellationRevenue.toFixed(2)}`;
         
         // Revenue comparison
         const percentChange = unifiedMockData.metrics.weekly.percentChange;

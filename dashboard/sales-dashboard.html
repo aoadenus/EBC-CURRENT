@@ -449,24 +449,36 @@
             console.log('Initializing Sales Dashboard...');
             localStorage.setItem('staffRole', 'sales');
             
-            // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
-            const today = '2025-11-23';
+            // ═══════════════════════════════════════════════════════
+            // SALES DASHBOARD - KPIs and Tables
+            // ═══════════════════════════════════════════════════════
             
-            // Calculate KPIs - orders placed today
-            const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === today && o.isCancelled !== 'Y');
+            const TODAY = '2025-11-23';
+            
+            // KPI 1: Orders Created Today (orderDate today)
+            const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === TODAY && o.isCancelled === 'N');
             const ordersCreatedToday = todaysOrders.length;
-            const scheduledPickupsToday = unifiedMockData.orders.filter(o => o.pickupDate === today && o.isCancelled !== 'Y').length;
-            const readyNow = todaysOrders.filter(o => o.statusId === 4).length;
-            const todaysRevenue = todaysOrders.reduce((sum, o) => sum + o.totalPrice, 0);
-            const newCustomersWeek = 8; // Mock value
+            
+            // KPI 2: Scheduled Pickups Today (pickupDate today)
+            const scheduledPickupsToday = unifiedMockData.orders.filter(o => o.pickupDate === TODAY && o.isCancelled === 'N').length;
+            
+            // KPI 3: Ready Now (Status 4, pickupDate today)
+            const readyNow = unifiedMockData.orders.filter(o => 
+                o.pickupDate === TODAY && o.statusId === 4 && o.isCancelled === 'N'
+            ).length;
+            
+            // KPI 4: New Customers This Week
+            const newCustomersWeek = unifiedMockData.customers.filter(c => 
+                c.id > 30 && c.statusId === 1
+            ).length;
             
             // Update KPI displays
             document.getElementById('orders-created-today').textContent = ordersCreatedToday;
             document.getElementById('last-order-time').textContent = `Last order: ${unifiedMockData.metrics.today.lastOrderTime}`;
             
             document.getElementById('scheduled-pickups-today').textContent = scheduledPickupsToday;
-            const firstPickup = unifiedMockData.getUpcomingPickups(today)[0];
-            const lastPickup = unifiedMockData.getUpcomingPickups(today)[scheduledPickupsToday - 1];
+            const firstPickup = unifiedMockData.getUpcomingPickups(TODAY)[0];
+            const lastPickup = unifiedMockData.getUpcomingPickups(TODAY)[scheduledPickupsToday - 1];
             if (firstPickup && lastPickup) {
                 document.getElementById('pickups-time-range').textContent = `${scheduledPickupsToday} pickups: ${firstPickup.time} - ${lastPickup.time}`;
             }
@@ -504,24 +516,35 @@
             
             tbody.innerHTML = recentOrders.map(order => {
                 const fullOrder = unifiedMockData.orders.find(o => o.id === order.id);
-                const statusClass = order.status.toLowerCase().replace(/ /g, '-');
+                const statusClass = getStatusClass(order.statusId);
                 return `
                     <tr>
                         <td><strong>#${order.id}</strong></td>
                         <td>${order.customer}</td>
-                        <td><span class="status-badge status-${statusClass}">${order.status}</span></td>
+                        <td><span class="status-badge ${statusClass}">${order.status}</span></td>
                         <td><strong>$${fullOrder.totalPrice.toFixed(2)}</strong></td>
                     </tr>
                 `;
             }).join('');
+        }
+        
+        function getStatusClass(statusId) {
+            const classes = {
+                1: 'status-pending',
+                2: 'status-baking',
+                3: 'status-decorating',
+                4: 'status-ready',
+                5: 'status-completed'
+            };
+            return classes[statusId] || 'status-pending';
         }
 
         function populateTodaysPickups() {
             const tbody = document.getElementById('todays-pickups-tbody');
             if (!tbody) return;
             
-            const today = '2025-11-23'; // Demo date
-            const pickups = unifiedMockData.getUpcomingPickups(today);
+            const TODAY = '2025-11-23'; // Demo date
+            const pickups = unifiedMockData.getUpcomingPickups(TODAY);
             
             tbody.innerHTML = pickups.map(pickup => `
                 <tr>

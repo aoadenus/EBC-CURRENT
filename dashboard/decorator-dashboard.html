@@ -351,27 +351,34 @@
         function initializeDecoratorDashboard() {
             localStorage.setItem('staffRole', 'decorator');
             
-            // Hardcoded for demo (Nov 23, 2025) - KPIs show orders PLACED today
-            const today = '2025-11-23';
+            // ═══════════════════════════════════════════════════════
+            // DECORATOR DASHBOARD - KPIs and Tables
+            // ═══════════════════════════════════════════════════════
+            
+            const TODAY = '2025-11-23';
             
             // Calculate KPIs - only for orders PLACED today (orderDate)
             const todaysOrders = unifiedMockData.orders.filter(o => 
-                o.orderDate === today && 
-                o.isCancelled !== 'Y'
+                o.orderDate === TODAY && 
+                o.isCancelled === 'N'
             );
             
-            const ordersToDecorate = todaysOrders.filter(o => o.statusId === 3).length;
+            // KPI 1: Awaiting Decoration (Status 2, orderDate today)
+            const ordersToDecorate = todaysOrders.filter(o => o.statusId === 2).length;
+            
+            // KPI 2: In Decoration (Status 3, orderDate today)
             const inDecorating = todaysOrders.filter(o => o.statusId === 3).length;
-            const readyApproval = todaysOrders.filter(o => o.statusId === 4).length;
-            const cancelledToday = unifiedMockData.orders.filter(o => 
-                o.orderDate === today && 
-                o.isCancelled === 'Y'
-            ).length;
+            
+            // KPI 3: Completed Today (Status >= 4, orderDate today)
+            const completedToday = todaysOrders.filter(o => o.statusId >= 4).length;
+            
+            // KPI 4: Total Today
+            const totalToday = todaysOrders.length;
             
             document.getElementById('orders-to-decorate').textContent = ordersToDecorate;
             document.getElementById('in-decorating').textContent = inDecorating;
-            document.getElementById('ready-approval').textContent = readyApproval;
-            document.getElementById('cancelled-today').textContent = cancelledToday;
+            document.getElementById('ready-approval').textContent = completedToday;
+            document.getElementById('cancelled-today').textContent = totalToday;
             
             populateDecoratingQueue();
             populateReadyForApproval();
@@ -385,12 +392,12 @@
         }
 
         function populateDecoratingQueue() {
-            const today = '2025-11-23'; // Demo date
+            const TODAY = '2025-11-23'; // Demo date
             const tbody = document.getElementById('decorating-queue-tbody');
             const queue = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
+                o.pickupDate === TODAY && 
                 o.statusId === 3 && 
-                o.isCancelled !== 'Y'
+                o.isCancelled === 'N'
             ).slice(0, 8);
             
             if (queue.length === 0) {
@@ -409,12 +416,12 @@
         }
 
         function populateReadyForApproval() {
-            const today = '2025-11-23'; // Demo date
+            const TODAY = '2025-11-23'; // Demo date
             const tbody = document.getElementById('approval-tbody');
             const ready = unifiedMockData.orders.filter(o => 
-                o.pickupDate === today && 
+                o.pickupDate === TODAY && 
                 o.statusId === 4 && 
-                o.isCancelled !== 'Y'
+                o.isCancelled === 'N'
             ).slice(0, 8);
             
             if (ready.length === 0) {
@@ -464,8 +471,8 @@
         }
 
         function populateCancelledOrders() {
-            const today = '2025-11-23'; // Demo date
-            const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y' && (o.pickupDate === today || o.orderDate === today));
+            const TODAY = '2025-11-23'; // Demo date
+            const cancelledOrders = unifiedMockData.orders.filter(o => o.isCancelled === 'Y' && (o.pickupDate === TODAY || o.orderDate === TODAY));
             const tbody = document.getElementById('cancelled-tbody');
             
             if (!tbody) return; // Exit if table doesn't exist
