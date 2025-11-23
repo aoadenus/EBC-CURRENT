@@ -443,6 +443,44 @@ const unifiedMockData = {
         return true;
     },
 
+    // NEW: Assign order to baker/decorator based on status change
+    assignStaffToOrder: function(orderId, newStatusId, currentStaffId) {
+        const order = this.orders.find(o => o.id === orderId);
+        if (!order) return false;
+        
+        let updates = { statusId: newStatusId, lastEmployeeId: currentStaffId };
+        
+        // Status 2 = In Baking -> Assign baker
+        if (newStatusId === 2 && !order.bakerAssigned) {
+            updates.bakerAssigned = currentStaffId;
+            updates.lastEmployeeId = currentStaffId;
+        }
+        
+        // Status 3 = Decorating -> Assign decorator
+        if (newStatusId === 3 && !order.decoratorAssigned) {
+            updates.decoratorAssigned = currentStaffId;
+            updates.lastEmployeeId = currentStaffId;
+        }
+        
+        // Status 4 = Ready -> Manager final approval
+        if (newStatusId === 4) {
+            updates.finalApprovalId = currentStaffId;
+            updates.lastEmployeeId = currentStaffId;
+        }
+        
+        return this.updateOrder(orderId, updates);
+    },
+
+    // NEW: Get who worked on order last by status
+    getLastWorkerByStatus: function(order) {
+        if (order.statusId === 5) return 'Manager (Completed)';
+        if (order.statusId === 4) return 'Manager (Approved)';
+        if (order.statusId === 3) return `Decorator #${order.decoratorAssigned || order.lastEmployeeId}`;
+        if (order.statusId === 2) return `Baker #${order.bakerAssigned || order.lastEmployeeId}`;
+        if (order.statusId === 1) return `Sales #${order.salesStaffId}`;
+        return 'Unassigned';
+    },
+
     cancelOrder: function(orderId) {
         const orderIndex = this.orders.findIndex(o => o.id === orderId);
         if (orderIndex === -1) return false;
