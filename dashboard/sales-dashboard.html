@@ -351,19 +351,19 @@
             <!-- CHARTS -->
             <div class="charts-grid">
                 <div class="chart-card">
-                    <h3 class="chart-title"><span>📈</span> Daily Orders (7 Days)</h3>
+                    <h3 class="chart-title"><span>📈</span> Daily Orders</h3>
                     <div class="chart-container">
                         <canvas id="dailyOrdersChart"></canvas>
                     </div>
                 </div>
                 <div class="chart-card">
-                    <h3 class="chart-title"><span>📊</span> Orders by Status</h3>
+                    <h3 class="chart-title"><span>📊</span> Status Breakdown</h3>
                     <div class="chart-container">
                         <canvas id="statusChart"></canvas>
                     </div>
                 </div>
                 <div class="chart-card">
-                    <h3 class="chart-title"><span>👥</span> New vs Returning</h3>
+                    <h3 class="chart-title"><span>👥</span> Customer Type Split</h3>
                     <div class="chart-container">
                         <canvas id="customersChart"></canvas>
                     </div>
@@ -496,7 +496,7 @@
                             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                             datasets: [{
                                 label: 'Orders',
-                                data: [5, 8, 6, 9, 7, 5, 6],
+                                data: [10, 13, 9, 12, 15, 11, 14],
                                 borderColor: '#3B82F6',
                                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                                 fill: true,
@@ -536,7 +536,7 @@
                             labels: ['To Be Created', 'In Baking', 'Decorating', 'Completed', 'Picked Up', 'Cancelled'],
                             datasets: [{
                                 label: 'Orders',
-                                data: [4, 3, 2, 5, 3, 1],
+                                data: [8, 6, 4, 10, 5, 1],
                                 backgroundColor: ['#F59E0B', '#EF4444', '#A855F7', '#10B981', '#3B82F6', '#6B7280'],
                                 borderRadius: 4
                             }]
@@ -564,11 +564,11 @@
                 const customersCtx = document.getElementById('customersChart');
                 if (customersCtx) {
                     new Chart(customersCtx, {
-                        type: 'doughnut',
+                        type: 'pie',
                         data: {
                             labels: ['New Customers', 'Returning Customers'],
                             datasets: [{
-                                data: [8, 14],
+                                data: [22, 31],
                                 backgroundColor: ['#10B981', '#3B82F6'],
                                 borderColor: '#fff',
                                 borderWidth: 3

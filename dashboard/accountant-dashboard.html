@@ -365,21 +365,21 @@
             <!-- CHARTS -->
             <div class="charts-grid">
                 <div class="chart-card">
-                    <h3 class="chart-title"><span>📈</span> Revenue Trend (30 Days)</h3>
+                    <h3 class="chart-title"><span>📈</span> Weekly Revenue Trend</h3>
                     <div class="chart-container">
                         <canvas id="revenueChart"></canvas>
                     </div>
                 </div>
                 <div class="chart-card">
-                    <h3 class="chart-title"><span>🥧</span> Expense Distribution</h3>
+                    <h3 class="chart-title"><span>💳</span> Payment Methods</h3>
                     <div class="chart-container">
-                        <canvas id="expenseChart"></canvas>
+                        <canvas id="paymentChart"></canvas>
                     </div>
                 </div>
                 <div class="chart-card">
-                    <h3 class="chart-title"><span>📊</span> Weekly Profit</h3>
+                    <h3 class="chart-title"><span>📊</span> Financial Overview</h3>
                     <div class="chart-container">
-                        <canvas id="profitChart"></canvas>
+                        <canvas id="balanceChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -555,7 +555,7 @@
                         labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                         datasets: [{
                             label: 'Revenue',
-                            data: [2850, 3120, 3340, 2950],
+                            data: [3200, 4100, 3800, 4600],
                             borderColor: '#10B981',
                             backgroundColor: 'rgba(16, 185, 129, 0.1)',
                             fill: true,
@@ -591,29 +591,19 @@
                 });
             }
 
-            // Expense Distribution Chart
-            const expenseCtx = document.getElementById('expenseChart');
-            if (expenseCtx) {
-                new Chart(expenseCtx, {
-                    type: 'doughnut',
+            // Payment Methods Chart
+            const paymentCtx = document.getElementById('paymentChart');
+            if (paymentCtx) {
+                new Chart(paymentCtx, {
+                    type: 'pie',
                     data: {
-                        labels: ['Ingredients', 'Rent', 'Utilities', 'Marketing', 'Supplies', 'Other'],
+                        labels: ['Cash', 'Debit', 'Credit Card'],
                         datasets: [{
-                            data: [
-                                dashboardData.expenses.ingredients,
-                                dashboardData.expenses.rent,
-                                dashboardData.expenses.utilities,
-                                dashboardData.expenses.marketing,
-                                dashboardData.expenses.supplies,
-                                dashboardData.expenses.other
-                            ],
+                            data: [25, 40, 35],
                             backgroundColor: [
-                                '#F59E0B',
-                                '#C44569',
-                                '#3B82F6',
                                 '#10B981',
-                                '#A855F7',
-                                '#6B7280'
+                                '#3B82F6',
+                                '#F59E0B'
                             ],
                             borderColor: '#fff',
                             borderWidth: 2
@@ -636,16 +626,16 @@
                 });
             }
 
-            // Weekly Profit Comparison Chart
-            const profitCtx = document.getElementById('profitChart');
-            if (profitCtx) {
-                new Chart(profitCtx, {
+            // Collected vs Outstanding Chart
+            const balanceCtx = document.getElementById('balanceChart');
+            if (balanceCtx) {
+                new Chart(balanceCtx, {
                     type: 'bar',
                     data: {
-                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                        labels: ['Collected', 'Outstanding'],
                         datasets: [{
-                            label: 'Profit',
-                            data: [850, 1120, 1340, 950],
+                            label: 'Amount',
+                            data: [5400, 2100],
                             backgroundColor: '#10B981',
                             borderRadius: 6,
                             borderSkipped: false
