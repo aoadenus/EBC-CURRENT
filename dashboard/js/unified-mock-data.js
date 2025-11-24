@@ -146,36 +146,36 @@ const unifiedMockData = {
   ],
 
   customers: [
-    { id: 1, name: "Sarah Johnson", phone: "555-0101", email: "sarah.j@email.com", address: "123 Maple Street", zip: "10001", type: "Retail", status: "Active" },
-    { id: 2, name: "Michael Chen", phone: "555-0102", email: "m.chen@email.com", address: "456 Oak Avenue", zip: "10002", type: "Retail", status: "Active" },
-    { id: 3, name: "Emily Davis", phone: "555-0103", email: "emily.d@email.com", address: "789 Pine Road", zip: "10003", type: "Corporate", status: "Active" },
-    { id: 4, name: "James Wilson", phone: "555-0104", email: "j.wilson@email.com", address: "321 Elm Boulevard", zip: "10004", type: "Retail", status: "Active" },
-    { id: 5, name: "Jessica Martinez", phone: "555-0105", email: "jessica.m@email.com", address: "654 Cedar Lane", zip: "10005", type: "Retail", status: "Active" },
-    { id: 6, name: "David Brown", phone: "555-0106", email: "d.brown@email.com", address: "987 Birch Drive", zip: "10006", type: "Corporate", status: "Active" },
-    { id: 7, name: "Amanda Garcia", phone: "555-0107", email: "amanda.g@email.com", address: "147 Spruce Court", zip: "10007", type: "Retail", status: "Active" },
-    { id: 8, name: "Christopher Lee", phone: "555-0108", email: "chris.lee@email.com", address: "258 Willow Way", zip: "10008", type: "Corporate", status: "Active" },
-    { id: 9, name: "Jennifer Taylor", phone: "555-0109", email: "jen.taylor@email.com", address: "369 Ash Street", zip: "10009", type: "Retail", status: "Active" },
-    { id: 10, name: "Daniel Anderson", phone: "555-0110", email: "d.anderson@email.com", address: "741 Poplar Avenue", zip: "10010", type: "Retail", status: "Active" },
-    { id: 11, name: "Michelle Thomas", phone: "555-0111", email: "m.thomas@email.com", address: "852 Walnut Road", zip: "10011", type: "Corporate", status: "Active" },
-    { id: 12, name: "Robert Jackson", phone: "555-0112", email: "rob.jackson@email.com", address: "963 Hickory Lane", zip: "10012", type: "Retail", status: "Active" },
-    { id: 13, name: "Lisa White", phone: "555-0113", email: "lisa.white@email.com", address: "159 Magnolia Drive", zip: "10013", type: "Retail", status: "Inactive" },
-    { id: 14, name: "William Harris", phone: "555-0114", email: "w.harris@email.com", address: "357 Sycamore Court", zip: "10014", type: "Corporate", status: "Active" },
-    { id: 15, name: "Karen Martin", phone: "555-0115", email: "karen.m@email.com", address: "246 Cherry Way", zip: "10015", type: "Retail", status: "Active" },
-    { id: 16, name: "Joseph Thompson", phone: "555-0116", email: "joe.thompson@email.com", address: "135 Dogwood Street", zip: "10016", type: "Corporate", status: "Active" },
-    { id: 17, name: "Nancy Moore", phone: "555-0117", email: "nancy.moore@email.com", address: "579 Redwood Avenue", zip: "10017", type: "Retail", status: "Active" },
-    { id: 18, name: "Richard Clark", phone: "555-0118", email: "r.clark@email.com", address: "468 Beech Road", zip: "10018", type: "Retail", status: "Active" },
-    { id: 19, name: "Patricia Lewis", phone: "555-0119", email: "pat.lewis@email.com", address: "791 Juniper Lane", zip: "10019", type: "Corporate", status: "Active" },
-    { id: 20, name: "Thomas Walker", phone: "555-0120", email: "t.walker@email.com", address: "680 Cypress Drive", zip: "10020", type: "Retail", status: "Active" },
-    { id: 21, name: "Barbara Hall", phone: "555-0121", email: "barb.hall@email.com", address: "913 Sequoia Court", zip: "10021", type: "Retail", status: "Inactive" },
-    { id: 22, name: "Charles Allen", phone: "555-0122", email: "c.allen@email.com", address: "802 Fir Way", zip: "10022", type: "Corporate", status: "Active" },
-    { id: 23, name: "Susan Young", phone: "555-0123", email: "susan.young@email.com", address: "524 Alder Street", zip: "10023", type: "Retail", status: "Active" },
-    { id: 24, name: "Matthew King", phone: "555-0124", email: "matt.king@email.com", address: "436 Laurel Avenue", zip: "10024", type: "Corporate", status: "Active" },
-    { id: 25, name: "Dorothy Wright", phone: "555-0125", email: "dorothy.w@email.com", address: "347 Chestnut Road", zip: "10025", type: "Retail", status: "Active" },
-    { id: 26, name: "Anthony Scott", phone: "555-0126", email: "anthony.s@email.com", address: "658 Pecan Lane", zip: "10026", type: "Retail", status: "Active" },
-    { id: 27, name: "Betty Green", phone: "555-0127", email: "betty.green@email.com", address: "769 Cottonwood Drive", zip: "10027", type: "Corporate", status: "Active" },
-    { id: 28, name: "Mark Adams", phone: "555-0128", email: "mark.adams@email.com", address: "871 Mesquite Court", zip: "10028", type: "Retail", status: "Active" },
-    { id: 29, name: "Helen Baker", phone: "555-0129", email: "helen.baker@email.com", address: "982 Mulberry Way", zip: "10029", type: "Retail", status: "Inactive" },
-    { id: 30, name: "Donald Nelson", phone: "555-0130", email: "don.nelson@email.com", address: "173 Hawthorn Street", zip: "10030", type: "Corporate", status: "Active" }
+    { id: 1, firstName: "Sarah", middleInitial: "M", lastName: "Johnson", phone: "555-0101", email: "sarah.j@email.com", address: "123 Maple Street", city: "Houston", state: "TX", zip: "77001", type: "Retail", status: "Active", lifetimeValue: 1850.00, lastOrderDate: "2025-11-20" },
+    { id: 2, firstName: "Michael", middleInitial: null, lastName: "Chen", phone: "555-0102", email: "m.chen@email.com", address: "456 Oak Avenue", city: "Houston", state: "TX", zip: "77002", type: "Retail", status: "Active", lifetimeValue: 1200.00, lastOrderDate: "2025-11-15" },
+    { id: 3, firstName: "Emily", middleInitial: "R", lastName: "Davis", phone: "555-0103", email: "emily.d@email.com", address: "789 Pine Road", city: "Houston", state: "TX", zip: "77003", type: "Corporate", status: "Active", lifetimeValue: 4500.00, lastOrderDate: "2025-11-22" },
+    { id: 4, firstName: "James", middleInitial: "T", lastName: "Wilson", phone: "555-0104", email: "j.wilson@email.com", address: "321 Elm Boulevard", city: "Houston", state: "TX", zip: "77004", type: "Retail", status: "Active", lifetimeValue: 2400.00, lastOrderDate: "2025-11-18" },
+    { id: 5, firstName: "Jessica", middleInitial: "L", lastName: "Martinez", phone: "555-0105", email: "jessica.m@email.com", address: "654 Cedar Lane", city: "Houston", state: "TX", zip: "77005", type: "Retail", status: "Active", lifetimeValue: 950.00, lastOrderDate: "2025-11-10" },
+    { id: 6, firstName: "David", middleInitial: null, lastName: "Brown", phone: "555-0106", email: "d.brown@email.com", address: "987 Birch Drive", city: "Houston", state: "TX", zip: "77006", type: "Corporate", status: "Active", lifetimeValue: 6200.00, lastOrderDate: "2025-11-21" },
+    { id: 7, firstName: "Amanda", middleInitial: "K", lastName: "Garcia", phone: "555-0107", email: "amanda.g@email.com", address: "147 Spruce Court", city: "Houston", state: "TX", zip: "77007", type: "Retail", status: "Active", lifetimeValue: 2850.00, lastOrderDate: "2025-11-19" },
+    { id: 8, firstName: "Christopher", middleInitial: "J", lastName: "Lee", phone: "555-0108", email: "chris.lee@email.com", address: "258 Willow Way", city: "Houston", state: "TX", zip: "77008", type: "Corporate", status: "Active", lifetimeValue: 7800.00, lastOrderDate: "2025-11-23" },
+    { id: 9, firstName: "Jennifer", middleInitial: null, lastName: "Taylor", phone: "555-0109", email: "jen.taylor@email.com", address: "369 Ash Street", city: "Houston", state: "TX", zip: "77009", type: "Retail", status: "Active", lifetimeValue: 1550.00, lastOrderDate: "2025-11-12" },
+    { id: 10, firstName: "Daniel", middleInitial: "P", lastName: "Anderson", phone: "555-0110", email: "d.anderson@email.com", address: "741 Poplar Avenue", city: "Houston", state: "TX", zip: "77010", type: "Retail", status: "Active", lifetimeValue: 2100.00, lastOrderDate: "2025-11-17" },
+    { id: 11, firstName: "Michelle", middleInitial: "A", lastName: "Thomas", phone: "555-0111", email: "m.thomas@email.com", address: "852 Walnut Road", city: "Houston", state: "TX", zip: "77011", type: "Corporate", status: "Active", lifetimeValue: 5400.00, lastOrderDate: "2025-11-20" },
+    { id: 12, firstName: "Robert", middleInitial: "F", lastName: "Jackson", phone: "555-0112", email: "rob.jackson@email.com", address: "963 Hickory Lane", city: "Houston", state: "TX", zip: "77012", type: "Retail", status: "Active", lifetimeValue: 2650.00, lastOrderDate: "2025-11-16" },
+    { id: 13, firstName: "Lisa", middleInitial: null, lastName: "White", phone: "555-0113", email: "lisa.white@email.com", address: "159 Magnolia Drive", city: "Houston", state: "TX", zip: "77013", type: "Retail", status: "Inactive", lifetimeValue: 325.00, lastOrderDate: "2025-08-15" },
+    { id: 14, firstName: "William", middleInitial: "H", lastName: "Harris", phone: "555-0114", email: "w.harris@email.com", address: "357 Sycamore Court", city: "Houston", state: "TX", zip: "77014", type: "Corporate", status: "Active", lifetimeValue: 8500.00, lastOrderDate: "2025-11-22" },
+    { id: 15, firstName: "Karen", middleInitial: "S", lastName: "Martin", phone: "555-0115", email: "karen.m@email.com", address: "246 Cherry Way", city: "Houston", state: "TX", zip: "77015", type: "Retail", status: "Active", lifetimeValue: 2200.00, lastOrderDate: "2025-11-14" },
+    { id: 16, firstName: "Joseph", middleInitial: "W", lastName: "Thompson", phone: "555-0116", email: "joe.thompson@email.com", address: "135 Dogwood Street", city: "Houston", state: "TX", zip: "77016", type: "Corporate", status: "Active", lifetimeValue: 6800.00, lastOrderDate: "2025-11-21" },
+    { id: 17, firstName: "Nancy", middleInitial: null, lastName: "Moore", phone: "555-0117", email: "nancy.moore@email.com", address: "579 Redwood Avenue", city: "Houston", state: "TX", zip: "77017", type: "Retail", status: "Active", lifetimeValue: 1750.00, lastOrderDate: "2025-11-13" },
+    { id: 18, firstName: "Richard", middleInitial: "D", lastName: "Clark", phone: "555-0118", email: "r.clark@email.com", address: "468 Beech Road", city: "Houston", state: "TX", zip: "77018", type: "Retail", status: "Active", lifetimeValue: 3100.00, lastOrderDate: "2025-11-19" },
+    { id: 19, firstName: "Patricia", middleInitial: "G", lastName: "Lewis", phone: "555-0119", email: "pat.lewis@email.com", address: "791 Juniper Lane", city: "Houston", state: "TX", zip: "77019", type: "Corporate", status: "Active", lifetimeValue: 4900.00, lastOrderDate: "2025-11-18" },
+    { id: 20, firstName: "Thomas", middleInitial: "B", lastName: "Walker", phone: "555-0120", email: "t.walker@email.com", address: "680 Cypress Drive", city: "Houston", state: "TX", zip: "77020", type: "Retail", status: "Active", lifetimeValue: 1450.00, lastOrderDate: "2025-11-11" },
+    { id: 21, firstName: "Barbara", middleInitial: null, lastName: "Hall", phone: "555-0121", email: "barb.hall@email.com", address: "913 Sequoia Court", city: "Houston", state: "TX", zip: "77021", type: "Retail", status: "Inactive", lifetimeValue: 180.00, lastOrderDate: "2025-07-20" },
+    { id: 22, firstName: "Charles", middleInitial: "E", lastName: "Allen", phone: "555-0122", email: "c.allen@email.com", address: "802 Fir Way", city: "Houston", state: "TX", zip: "77022", type: "Corporate", status: "Active", lifetimeValue: 5900.00, lastOrderDate: "2025-11-20" },
+    { id: 23, firstName: "Susan", middleInitial: "V", lastName: "Young", phone: "555-0123", email: "susan.young@email.com", address: "524 Alder Street", city: "Houston", state: "TX", zip: "77023", type: "Retail", status: "Active", lifetimeValue: 2750.00, lastOrderDate: "2025-11-15" },
+    { id: 24, firstName: "Matthew", middleInitial: "C", lastName: "King", phone: "555-0124", email: "matt.king@email.com", address: "436 Laurel Avenue", city: "Houston", state: "TX", zip: "77024", type: "Corporate", status: "Active", lifetimeValue: 7200.00, lastOrderDate: "2025-11-22" },
+    { id: 25, firstName: "Dorothy", middleInitial: null, lastName: "Wright", phone: "555-0125", email: "dorothy.w@email.com", address: "347 Chestnut Road", city: "Houston", state: "TX", zip: "77025", type: "Retail", status: "Active", lifetimeValue: 1950.00, lastOrderDate: "2025-11-16" },
+    { id: 26, firstName: "Anthony", middleInitial: "N", lastName: "Scott", phone: "555-0126", email: "anthony.s@email.com", address: "658 Pecan Lane", city: "Houston", state: "TX", zip: "77026", type: "Retail", status: "Active", lifetimeValue: 1100.00, lastOrderDate: "2025-11-09" },
+    { id: 27, firstName: "Betty", middleInitial: "O", lastName: "Green", phone: "555-0127", email: "betty.green@email.com", address: "769 Cottonwood Drive", city: "Houston", state: "TX", zip: "77027", type: "Corporate", status: "Active", lifetimeValue: 5100.00, lastOrderDate: "2025-11-19" },
+    { id: 28, firstName: "Mark", middleInitial: null, lastName: "Adams", phone: "555-0128", email: "mark.adams@email.com", address: "871 Mesquite Court", city: "Houston", state: "TX", zip: "77028", type: "Retail", status: "Active", lifetimeValue: 1650.00, lastOrderDate: "2025-11-14" },
+    { id: 29, firstName: "Helen", middleInitial: "I", lastName: "Baker", phone: "555-0129", email: "helen.baker@email.com", address: "982 Mulberry Way", city: "Houston", state: "TX", zip: "77029", type: "Retail", status: "Inactive", lifetimeValue: 125.00, lastOrderDate: "2025-06-10" },
+    { id: 30, firstName: "Donald", middleInitial: "R", lastName: "Nelson", phone: "555-0130", email: "don.nelson@email.com", address: "173 Hawthorn Street", city: "Houston", state: "TX", zip: "77030", type: "Corporate", status: "Active", lifetimeValue: 8900.00, lastOrderDate: "2025-11-23" }
   ],
 
   employees: [
@@ -193,10 +193,12 @@ const unifiedMockData = {
     today: {
       totalOrders: 15,
       lastOrderTime: "4:32 PM",
-      ordersInProduction: 7,
+      ordersInProduction: 10,  // 3 Confirmed + 4 In Baking + 3 Decorating
       longestInProduction: "Order #1006 (3h 15m)",
-      completedToday: 3,
-      avgCompletionTime: "2h 45m"
+      completedToday: 3,  // 3 Ready for Pickup
+      avgCompletionTime: "2h 45m",
+      revenue: 2262.00,
+      cancelled: 2
     },
     weekly: {
       percentChange: 12.5,
@@ -212,8 +214,15 @@ const unifiedMockData = {
   // Helper methods
   getRecentOrders(limit = 10) {
     return this.orders
-      .sort((a, b) => new Date(b.orderDate) - new Date(a.orderDate))
-      .slice(0, limit);
+      .filter(o => o.orderDate === '2025-11-23')  // Today's orders only
+      .sort((a, b) => b.id - a.id)  // Most recent first
+      .slice(0, limit)
+      .map(order => ({
+        ...order,
+        customer: this.getCustomerName(order.customerId),
+        product: this.getProductName(order.productId),
+        status: this.getStatusDescription(order.statusId)
+      }));
   },
 
   getUpcomingPickups(date) {
@@ -227,12 +236,25 @@ const unifiedMockData = {
         const dateCompare = new Date(a.pickupDate) - new Date(b.pickupDate);
         if (dateCompare !== 0) return dateCompare;
         return a.pickupTime.localeCompare(b.pickupTime);
-      });
+      })
+      .map(order => ({
+        ...order,
+        customer: this.getCustomerName(order.customerId),
+        product: this.getProductName(order.productId),
+        status: this.getStatusDescription(order.statusId)
+      }));
   },
 
   getCustomerName(customerId) {
     const customer = this.customers.find(c => c.id === customerId);
-    return customer ? customer.name : 'Unknown Customer';
+    if (!customer) return 'Unknown Customer';
+    
+    // Support both old (name) and new (firstName/lastName) format
+    if (customer.firstName && customer.lastName) {
+      const middle = customer.middleInitial ? ` ${customer.middleInitial}.` : '';
+      return `${customer.firstName}${middle} ${customer.lastName}`;
+    }
+    return customer.name || 'Unknown Customer';
   },
 
   getProductName(productId) {
@@ -261,6 +283,29 @@ const unifiedMockData = {
 
   getOrdersByStatus(statusId) {
     return this.orders.filter(o => o.statusId === statusId);
+  },
+
+  // Additional helper methods for all-orders.html
+  getCustomer(customerId) {
+    return this.customers.find(c => c.id === customerId);
+  },
+
+  getProduct(productId) {
+    return this.products.find(p => p.id === productId);
+  },
+
+  getStatusDescription(statusId) {
+    const status = this.orderStatuses.find(s => s.id === statusId);
+    return status ? status.name : 'Unknown';
+  },
+
+  cancelOrder(orderId) {
+    const order = this.orders.find(o => o.id === orderId);
+    if (order) {
+      order.statusId = 6; // Cancelled status
+      return true;
+    }
+    return false;
   }
 };
 

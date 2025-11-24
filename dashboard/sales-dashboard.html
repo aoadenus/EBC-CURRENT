@@ -462,16 +462,16 @@
             
             const TODAY = '2025-11-23';
             
-            // KPI 1: Orders Created Today (orderDate today)
-            const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === TODAY && o.isCancelled === 'N');
+            // KPI 1: Orders Created Today (orderDate today, not cancelled)
+            const todaysOrders = unifiedMockData.orders.filter(o => o.orderDate === TODAY && o.statusId !== 6);
             const ordersCreatedToday = todaysOrders.length;
             
-            // KPI 2: Scheduled Pickups Today (pickupDate today)
-            const scheduledPickupsToday = unifiedMockData.orders.filter(o => o.pickupDate === TODAY && o.isCancelled === 'N').length;
+            // KPI 2: Scheduled Pickups Today (pickupDate today, not cancelled)
+            const scheduledPickupsToday = unifiedMockData.orders.filter(o => o.pickupDate === TODAY && o.statusId !== 6).length;
             
             // KPI 3: Ready Now (Status 4, pickupDate today)
             const readyNow = unifiedMockData.orders.filter(o => 
-                o.pickupDate === TODAY && o.statusId === 4 && o.isCancelled === 'N'
+                o.pickupDate === TODAY && o.statusId === 4
             ).length;
             
             // KPI 4: New Customers This Week
@@ -592,7 +592,7 @@
             
             container.innerHTML = tomorrowsOrders.map(order => `
                 <div class="schedule-item">
-                    <div class="schedule-time">${unifiedMockData.formatTime(order.pickupTime)}</div>
+                    <div class="schedule-time">${order.pickupTime.substring(0,5)}</div>
                     <div class="schedule-customer">${unifiedMockData.getCustomerName(order.customerId)}</div>
                     <div class="schedule-cake">${unifiedMockData.getProductName(order.productId)}</div>
                 </div>
